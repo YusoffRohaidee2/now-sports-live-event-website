@@ -3,24 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Now - Sports Live Event</title>
+    <!-- Buang Referer asal untuk elak disekat CDN Tengine RCTI+ -->
+    <meta name="referrer" content="no-referrer" />
+    
+    <title>Now Sports Live Event by Sports Hub Official</title>
+    
+    <!-- DNS Preconnect & Prefetch -->
+    <link rel="dns-prefetch" href="//cdnbal1.indihometv.com">
+    <link rel="preconnect" href="https://cdnbal1.indihometv.com" crossorigin>
+    <link rel="dns-prefetch" href="//bold-sky-a86c.yusoff-rohaidee.workers.dev">
+    <link rel="preconnect" href="https://bold-sky-a86c.yusoff-rohaidee.workers.dev" crossorigin>
+    <link rel="dns-prefetch" href="//vjs.zencdn.net">
+    <link rel="preconnect" href="https://vjs.zencdn.net" crossorigin>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <!-- Video.js CSS & JS -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+
+    <!-- DevTools Protection -->
     <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     
+    <!-- Ad Scripts -->
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
     <script type="text/javascript">
         aclib.runPop({ zoneId: '11159258' });
         aclib.runPop({ zoneId: '10298126' });
     </script>
 
-    <script>window.CHANNEL_ID = "sky_sport_f1_uk";</script>
+    <script>window.CHANNEL_ID = "hyundai_aff_cup_2026";</script>
 
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
-        /* Animasi Ticker/Running Text */
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -28,24 +45,25 @@
         .animate-marquee {
             animation: marquee 25s linear infinite;
         }
-        /* Style Watermark Clappr */
-        .clappr-wm-ip {
-            position: absolute; z-index: 9999;
-            color: rgba(255,255,255,0.4);
-            font-family: 'Montserrat', sans-serif; font-size: 24px;
-            pointer-events: none; text-shadow: 2px 2px 4px #000;
-            opacity: 0; transition: opacity 0.5s, left 0.5s, top 0.5s;
+        .video-js {
+            width: 100%;
+            height: 100%;
         }
-        .clappr-wm-session {
-            position: absolute; z-index: 9999;
-            color: rgba(255,255,255,0.3);
-            font-family: monospace; font-size: 12px;
-            pointer-events: none; opacity: 0; transition: opacity 1s;
+        .vjs-big-play-button {
+            background-color: rgba(220, 38, 38, 0.8) !important;
+            border: none !important;
+            border-radius: 50% !important;
+            width: 2em !important;
+            height: 2em !important;
+            line-height: 2em !important;
+            margin-left: -1em !important;
+            margin-top: -1em !important;
         }
     </style>
 </head>
 <body class="text-gray-100 min-h-screen flex flex-col justify-between select-none">
 
+    <!-- Header -->
     <header class="border-b border-gray-800 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -53,134 +71,226 @@
                 <span class="text-xs uppercase tracking-widest bg-red-600 text-white font-bold px-2 py-0.5 rounded-sm animate-pulse">Live Event</span>
             </div>
             <div id="stream-status" class="text-xs bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700 text-gray-400">
-                Player Status: <span class="text-green-400 font-semibold">Secured via Clappr</span>
+                Player Status: <span class="text-green-400 font-semibold">Video.js (CORS Proxy Integrated)</span>
             </div>
         </div>
     </header>
 
+    <!-- Running Ticker -->
     <div class="bg-red-600 text-white py-2 overflow-hidden whitespace-nowrap font-bold text-sm tracking-wide shadow-inner">
         <div class="inline-block animate-marquee uppercase">
-            🔥 SPORTS LIVE EVENT TODAY : FORMULA 1 Special Stream on Sky Sports F1 HD &nbsp;|&nbsp; High-bitrate secure stream optimized! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            🔥 HYUNDAI AFF CUP 2026 LIVE MATCHES &nbsp;|&nbsp; Stream Live via IndiHomeTV & RCTI+ Worker Proxy &nbsp;|&nbsp; Fast Low-Latency Stream &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-4">
-                Now Sports Live Event
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-3">
+                Now Sports Live Event by Sports Hub Official
             </h1>
-            <p class="text-gray-400 text-base md:text-lg leading-relaxed">
-                Watch all sports live event in HD here!.
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                Official Live Streaming Coverage for Hyundai AFF Cup 2026.
             </p>
         </div>
 
-        <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden shadow-2xl mb-12">
+        <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden shadow-2xl mb-8">
             <div class="p-4 bg-gray-950 border-b border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div class="flex items-center space-x-4">
-                    <img src="https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1306.png" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
+                    <img id="current-logo" src="https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_GTV-180x180_2025_11_06_13_07_56.jpg" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
                     <div>
                         <span class="text-xs text-red-500 font-bold uppercase tracking-wider">Now Streaming</span>
-                        <h2 class="text-lg font-bold text-white">Sky Sports F1 HD</h2>
+                        <h2 id="current-channel-name" class="text-lg font-bold text-white">GTV (IndiHomeTV)</h2>
                     </div>
                 </div>
                 <div class="text-xs text-gray-500 bg-black/30 px-3 py-2 rounded-lg border border-gray-800">
-                    Engine: <span class="text-pink-500 font-mono">Clappr Secure</span>
+                    Engine: <span class="text-blue-400 font-mono">Video.js + Worker Proxy</span>
                 </div>
             </div>
 
+            <!-- Video Player Container -->
             <div class="relative aspect-video bg-black flex justify-center items-center">
-                <div id="player" class="w-full h-full"></div>
+                <video id="vhs-player" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay preload="auto" playsinline></video>
+            </div>
+        </div>
+
+        <!-- Channel Selector Buttons / Grid -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Pilih Saluran Siaran Live (IndiHomeTV & RCTI+ Workers):</h3>
+            <div id="channel-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                <!-- Channels diisi secara dinamik -->
             </div>
         </div>
     </main>
 
     <footer class="border-t border-gray-800 bg-gray-950 py-6 text-center text-xs text-gray-600">
-        <p>&copy; 2026 Now Sports Live Event. Secure Stream System enabled. For educational testing purposes.</p>
+        <p>&copy; 2026 Now Sports Live Event by Sports Hub Official. All rights reserved.</p>
     </footer>
 
     <script>
-        // Info Stream & Token Khas F1
-        var ipText      = ""; // Kosong seperti asal, atau isi jika mahu paparkan IP
-        var sessionText = "1e132974";
-        var streamUrl   = "https://d30aylox5wvifh.cloudfront.net/live/media0/wc1/DASH/wc1.mpd";
+        const CORS_PROXY = "https://bold-sky-a86c.yusoff-rohaidee.workers.dev/?url=";
 
-        var wmIP, wmSess;
+        const channels = [
+            // Saluran IndiHomeTV (DASH Stream)
+            {
+                name: "GTV (IndiHome)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_GTV-180x180_2025_11_06_13_07_56.jpg",
+                src: "https://cdnbal1.indihometv.com/atm/DASH/globaltv/globaltv-avc1_2500000=7-3277707030000000.mpd",
+                type: "application/dash+xml",
+                provider: "IndiHomeTV",
+                useProxy: false
+            },
+            {
+                name: "MNCTV (IndiHome)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_MNC-180x180_2025_11_06_13_06_02.jpg",
+                src: "https://cdnbal1.indihometv.com/atm/DASH/mnctv/mnctv-avc1_2500000=7-3277707030000000.mpd",
+                type: "application/dash+xml",
+                provider: "IndiHomeTV",
+                useProxy: false
+            },
+            {
+                name: "RCTI (IndiHome)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_RCTI-180x180_2025_11_06_13_09_06.jpg",
+                src: "https://cdnbal1.indihometv.com/atm/DASH/rcti/rcti-avc1_2500000=7-3277707030000000.mpd",
+                type: "application/dash+xml",
+                provider: "IndiHomeTV",
+                useProxy: false
+            },
+            {
+                name: "iNews (IndiHome)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/image_ch_inews.png",
+                src: "https://cdnbal1.indihometv.com/atm/DASH/inews/inews-avc1_2500000=7-3277707030000000.mpd",
+                type: "application/dash+xml",
+                provider: "IndiHomeTV",
+                useProxy: false
+            },
+            // Saluran R+ Cloudflare Workers (Lalu Proxy Yusoff)
+            {
+                name: "RCTI (R+ Proxy)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_RCTI-180x180_2025_11_06_13_09_06.jpg",
+                src: "https://r-plus.sedotcw3.workers.dev/index.m3u8?id=rcti",
+                type: "application/x-mpegURL",
+                provider: "RCTI+ Worker",
+                useProxy: true
+            },
+            {
+                name: "GTV (R+ Proxy)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_GTV-180x180_2025_11_06_13_07_56.jpg",
+                src: "https://r-plus.sedotcw3.workers.dev/index.m3u8?id=gtv",
+                type: "application/x-mpegURL",
+                provider: "RCTI+ Worker",
+                useProxy: true
+            },
+            {
+                name: "MNCTV (R+ Proxy)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_MNC-180x180_2025_11_06_13_06_02.jpg",
+                src: "https://r-plus.sedotcw3.workers.dev/index.m3u8?id=mnctv",
+                type: "application/x-mpegURL",
+                provider: "RCTI+ Worker",
+                useProxy: true
+            },
+            {
+                name: "iNews (R+ Proxy)",
+                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/image_ch_inews.png",
+                src: "https://r-plus.sedotcw3.workers.dev/index.m3u8?id=inews",
+                type: "application/x-mpegURL",
+                provider: "RCTI+ Worker",
+                useProxy: true
+            }
+        ];
 
-        // Inisialisasi Clappr Player
-        var player = new Clappr.Player({
-            source: streamUrl,
-            parentId: "#player",
-            width: "100%",
-            height: "100%",
-            mediacontrol: { seekbar: "#fb00ff", buttons: "#fb00ff" },
-            autoPlay: true,
-            events: {
-                onReady: function() { addWatermarks(this); },
-                onPlay: function() {
-                    if (wmIP)   wmIP.style.display   = "block";
-                    if (wmSess) wmSess.style.display = "block";
-                },
-                onError: function() {
-                    if (wmIP)   wmIP.style.display   = "none";
-                    if (wmSess) wmSess.style.display = "none";
-                    setTimeout(() => {
-                        this.configure({ source: streamUrl + "&r=" + Math.random() });
-                        this.play();
-                    }, 2000);
+        // Global VHS Options
+        if (window.videojs) {
+            videojs.options.vhs = {
+                overrideNative: true,
+                enableLowInitialPlaylist: true,
+                smoothQualityChange: true,
+                GOOG_TV_PARSER: true,
+                useDevicePixelRatio: true
+            };
+        }
+
+        // PINTASAN VIDEO.JS: Paksa semua subnet m3u8 / .ts rctiplus & workers.dev lalu melalui Proxy Yusoff
+        videojs.Vhs.xhr.beforeRequest = function(options) {
+            var uri = options.uri;
+            if ((uri.includes('rctiplus.id') || uri.includes('r-plus.sedotcw3.workers.dev')) && !uri.includes('bold-sky-a86c')) {
+                options.uri = CORS_PROXY + encodeURIComponent(uri);
+            }
+            return options;
+        };
+
+        // Inisialisasi Player
+        var player = videojs('vhs-player', {
+            liveui: true,
+            responsive: true,
+            fluid: true,
+            liveTracker: {
+                trackingThreshold: 15,
+                liveTolerance: 5
+            },
+            html5: {
+                vhs: {
+                    maxBufferLength: 8,
+                    maxMaxBufferLength: 12,
+                    backBufferLength: 0
                 }
             }
         });
 
-        // Fungsi Suntik Watermark Bergerak
-        function addWatermarks(playerInstance) {
-            var container = playerInstance.core.el;
+        player.on('play', function() {
+            if (player.liveTracker && player.liveTracker.isBehind()) {
+                player.liveTracker.seekToLiveEdge();
+            }
+        });
 
-            wmIP = document.createElement('div');
-            wmIP.className = 'clappr-wm-ip';
-            wmIP.innerText = ipText;
-            wmIP.style.display = "none";
-            container.appendChild(wmIP);
-
-            wmSess = document.createElement('div');
-            wmSess.className = 'clappr-wm-session';
-            wmSess.innerText = sessionText;
-            wmSess.style.display = "none";
-            container.appendChild(wmSess);
-
-            function moveIP() {
-                if (wmIP.style.display !== "none" && ipText !== "") {
-                    var x = Math.random() * (container.offsetWidth - 200);
-                    var y = Math.random() * (container.offsetHeight - 100);
-                    wmIP.style.left = x + "px";
-                    wmIP.style.top  = y + "px";
-                    wmIP.style.opacity = "1";
-                    setTimeout(() => { wmIP.style.opacity = "0"; }, 6000);
+        player.on('error', function() {
+            setTimeout(function() {
+                var currentSrc = player.src();
+                if (currentSrc) {
+                    player.src(currentSrc);
+                    player.play();
                 }
+            }, 1000);
+        });
+
+        // Fungsi Tukar Saluran
+        function loadChannel(index) {
+            const ch = channels[index];
+            document.getElementById('current-channel-name').innerText = ch.name;
+            document.getElementById('current-logo').src = ch.logo;
+
+            let finalUrl = ch.src;
+            if (ch.useProxy) {
+                finalUrl = CORS_PROXY + encodeURIComponent(ch.src);
             }
 
-            function moveSess() {
-                if (wmSess.style.display !== "none") {
-                    wmSess.style.top = "auto"; wmSess.style.bottom = "auto";
-                    wmSess.style.left = "auto"; wmSess.style.right = "auto";
-                    var corners = [
-                        {t:"20px",l:"20px"},{t:"20px",r:"20px"},
-                        {b:"80px",l:"20px"},{b:"80px",r:"20px"}
-                    ];
-                    var c = corners[Math.floor(Math.random() * corners.length)];
-                    if (c.t) wmSess.style.top    = c.t;
-                    if (c.b) wmSess.style.bottom = c.b;
-                    if (c.l) wmSess.style.left   = c.l;
-                    if (c.r) wmSess.style.right  = c.r;
-                    wmSess.style.opacity = "1";
-                    setTimeout(() => { wmSess.style.opacity = "0"; }, 8000);
-                }
-            }
-
-            setInterval(moveIP,  40000); setTimeout(moveIP,   3000);
-            setInterval(moveSess,50000); setTimeout(moveSess,10000);
+            player.src({
+                src: finalUrl,
+                type: ch.type
+            });
+            player.play();
         }
 
-        // Perlindungan Tambahan (Block Click-Kanan)
+        // Render Button Saluran
+        const channelGrid = document.getElementById('channel-grid');
+        channels.forEach((ch, idx) => {
+            const btn = document.createElement('button');
+            btn.className = "flex items-center space-x-3 p-3 bg-gray-950 hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full";
+            btn.onclick = () => loadChannel(idx);
+            btn.innerHTML = `
+                <img src="${ch.logo}" class="h-8 w-8 object-contain bg-black/50 p-0.5 rounded">
+                <div class="overflow-hidden">
+                    <div class="text-sm font-semibold text-white truncate">${ch.name}</div>
+                    <div class="text-xs text-gray-500">${ch.provider}</div>
+                </div>
+            `;
+            channelGrid.appendChild(btn);
+        });
+
+        // Mainkan Saluran Pertama Secara Lalai
+        loadChannel(0);
+
+        // Sekat Menu Klik Kanan
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
