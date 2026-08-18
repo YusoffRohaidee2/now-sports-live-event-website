@@ -15,6 +15,16 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Video.js Styles & Script -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+
+    <!-- JWPlayer Custom Styles & Scripts (Khas RCTI+) -->
+    <link rel="stylesheet" href="https://www.rctiplus.com/assets/css/jwplayer-cstm-btn.min.css">
+    <link rel="stylesheet" href="https://www.rctiplus.com/live-assets/css/jwplayer-custom-button.css">
+    <script src="https://je-es.rctiplus.com/vendor/jwplayer-8.25.1/jwplayer.js"></script>
+    <script src="https://www.rctiplus.com/assets/js/jwplayer-cstm-btn.min.js"></script>
+
     <!-- DevTools Auto-Disable Library -->
     <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 
@@ -45,6 +55,16 @@
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #ef4444;
+        }
+        .video-js .vjs-big-play-button {
+            background-color: #ef4444;
+            border-color: #ef4444;
+            border-radius: 50%;
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            margin-top: -1em;
+            margin-left: -1em;
         }
     </style>
 </head>
@@ -95,68 +115,71 @@
                 </div>
                 
                 <div class="overflow-y-auto custom-scrollbar flex-grow pr-1 space-y-4 text-xs">
+                    
+                    <!-- Semi-Finals (Leg 2) -->
                     <div>
-                        <span class="bg-yellow-600/20 text-yellow-400 border border-yellow-500/30 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Semi-Finals & Finals</span>
+                        <span class="bg-yellow-600/20 text-yellow-400 border border-yellow-500/30 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Semi-Finals (Leg 2)</span>
                         
-                        <div class="mt-2 space-y-3">
-                            <!-- Semi-Finals (Leg 1) -->
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Semi-Finals (Leg 1)</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Saturday, 15 August 2026</div>
-                                        <div class="font-medium text-white">Singapore vs Thailand</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                        <div class="mt-2 space-y-2">
+                            <div class="bg-gray-950 p-2.5 rounded-xl border border-gray-800 hover:border-gray-700 transition">
+                                <div class="text-gray-400 text-[10px] font-semibold mb-1 flex justify-between items-center">
+                                    <span>Tuesday, 18 August 2026</span>
+                                    <span class="text-xs font-bold text-red-400">8:00 PM</span>
                                 </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Sunday, 16 August 2026</div>
-                                        <div class="font-medium text-white">Malaysia vs Vietnam</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                <div class="font-bold text-white text-xs flex items-center justify-between">
+                                    <span>Thailand</span>
+                                    <span class="text-[10px] text-gray-500 font-normal">vs</span>
+                                    <span>Singapore</span>
                                 </div>
                             </div>
 
-                            <!-- Semi-Finals (Leg 2) -->
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Semi-Finals (Leg 2)</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Tuesday, 18 August 2026</div>
-                                        <div class="font-medium text-white">Thailand vs Singapore</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                            <div class="bg-gray-950 p-2.5 rounded-xl border border-gray-800 hover:border-gray-700 transition">
+                                <div class="text-gray-400 text-[10px] font-semibold mb-1 flex justify-between items-center">
+                                    <span>Wednesday, 19 August 2026</span>
+                                    <span class="text-xs font-bold text-red-400">8:00 PM</span>
                                 </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Wednesday, 19 August 2026</div>
-                                        <div class="font-medium text-white">Vietnam vs Malaysia</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <!-- Finals -->
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Finals</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Saturday, 22 August 2026</div>
-                                        <div class="font-medium text-white">Winner SF A vs Winner SF B</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">TBA</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="text-gray-400 text-[10px]">Wednesday, 26 August 2026</div>
-                                        <div class="font-medium text-white">Winner SF B vs Winner SF A</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">TBA</span>
+                                <div class="font-bold text-white text-xs flex items-center justify-between">
+                                    <span>Vietnam</span>
+                                    <span class="text-[10px] text-gray-500 font-normal">vs</span>
+                                    <span>Malaysia</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 3rd Place Play-off & Finals -->
+                    <div>
+                        <span class="bg-red-600/20 text-red-400 border border-red-500/30 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Finals & 3rd Place</span>
+                        
+                        <div class="mt-2 space-y-2">
+                            <!-- 3rd Place Play-off -->
+                            <div class="bg-gray-950 p-2.5 rounded-xl border border-gray-800 hover:border-gray-700 transition">
+                                <div class="text-gray-400 text-[10px] font-semibold mb-1 flex justify-between items-center">
+                                    <span>Saturday, 22 August 2026 (3rd Place)</span>
+                                    <span class="text-xs font-bold text-red-400">8:00 PM</span>
+                                </div>
+                                <div class="font-bold text-gray-300 text-xs flex items-center justify-between">
+                                    <span>SF 1 Loser</span>
+                                    <span class="text-[10px] text-gray-500 font-normal">vs</span>
+                                    <span>SF 2 Loser</span>
+                                </div>
+                            </div>
+
+                            <!-- Grand Final -->
+                            <div class="bg-gradient-to-r from-red-950/40 to-gray-950 p-2.5 rounded-xl border border-red-500/40 hover:border-red-500 transition">
+                                <div class="text-yellow-400 text-[10px] font-bold mb-1 flex justify-between items-center uppercase">
+                                    <span>🏆 Grand Final — Sunday, 23 Aug 2026</span>
+                                    <span class="text-xs font-bold text-red-400">8:00 PM</span>
+                                </div>
+                                <div class="font-extrabold text-white text-xs flex items-center justify-between">
+                                    <span>SF 1 Winner</span>
+                                    <span class="text-[10px] text-yellow-500 font-bold">VS</span>
+                                    <span>SF 2 Winner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -165,23 +188,33 @@
                 <div>
                     <div class="p-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img id="current-logo" src="https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_RCTI-180x180_2025_11_06_13_09_06.jpg" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
+                            <img id="current-logo" src="https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/image_ch_inews.png" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
                             <div>
                                 <span class="text-xs text-red-500 font-bold uppercase tracking-wider flex items-center gap-1">
                                     <i class="fas fa-broadcast-tower text-[10px]"></i> Now Streaming
                                 </span>
-                                <h2 id="current-channel-name" class="text-lg font-bold text-white">RCTI</h2>
+                                <h2 id="current-channel-name" class="text-lg font-bold text-white">1 - iNews</h2>
+                                <p id="current-language" class="text-xs text-gray-400">Commentary language: Indonesian Language</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative aspect-video bg-black flex justify-center items-center">
+                        <!-- 1. Iframe Player -->
                         <iframe id="main-iframe" 
                                 src="about:blank" 
-                                class="w-full h-full border-0" 
+                                class="w-full h-full border-0 hidden" 
                                 allow="autoplay; encrypted-media; picture-in-picture" 
-                                sandbox="allow-scripts allow-same-origin"
+                                sandbox="allow-scripts allow-same-origin allow-forms"
                                 allowfullscreen></iframe>
+
+                        <!-- 2. VideoJS Player -->
+                        <div id="videojs-container" class="w-full h-full hidden">
+                            <video id="videojs-player" class="video-js vjs-default-skin vjs-big-play-centered w-full h-full" controls crossorigin="anonymous"></video>
+                        </div>
+
+                        <!-- 3. JWPlayer Container -->
+                        <div id="jwplayer-container" class="w-full h-full hidden"></div>
                     </div>
                 </div>
             </div>
@@ -193,7 +226,7 @@
             <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-2">
                 <i class="fas fa-list"></i> Select Channel:
             </h3>
-            <div id="channel-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
+            <div id="channel-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
         </div>
     </main>
 
@@ -202,7 +235,7 @@
     </footer>
 
     <script>
-        // 1. Block Window Open (Prevent Ads / External Links)
+        // 1. Block Window Open
         window.open = function() { return null; };
 
         // 2. Anti-DevTools Key Combinations & Right Click Blocking
@@ -216,53 +249,107 @@
             }
         });
 
-        // 3. Obfuscated Stream Data
+        // 3. Channel Stream Data
         const channels = [
             {
-                name: "RCTI",
-                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_RCTI-180x180_2025_11_06_13_09_06.jpg",
-                b64Url: "aHR0cHM6Ly9wbGF5ZXIuaWNhbnBsYXkubXkuaWQvP3VybD1odHRwczovL3JjdGlwbHVzLmljYW5wbGF5Lm15LmlkL3JjdGkubTN1OA=="
-            },
-            {
-                name: "MNCTV",
-                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_MNC-180x180_2025_11_06_13_06_02.jpg",
-                b64Url: "aHR0cHM6Ly9wbGF5ZXIuaWNhbnBsYXkubXkuaWQvP3VybD1odHRwczovL3JjdGlwbHVzLmljYW5wbGF5Lm15LmlkL21uY3R2Lm0zdTg="
-            },
-            {
-                name: "GTV",
-                logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/imageCir_GTV-180x180_2025_11_06_13_07_56.jpg",
-                b64Url: "aHR0cHM6Ly9wbGF5ZXIuaWNhbnBsYXkubXkuaWQvP3VybD1odHRwczovL3JjdGlwbHVzLmljYW5wbGF5Lm15LmlkL2d0di5tM3U4"
-            },
-            {
-                name: "iNews",
+                type: "iframe",
+                name: "1 - iNews",
+                feed: "Global Feed | Indonesia",
+                language: "Indonesian Language",
                 logo: "https://raw.githubusercontent.com/apistech/project/refs/heads/main/logo/image_ch_inews.png",
                 b64Url: "aHR0cHM6Ly9wbGF5ZXIuaWNhbnBsYXkubXkuaWQvP3VybD1odHRwczovL3JjdGlwbHVzLmljYW5wbGF5Lm15LmlkL2luZXdzLm0zdTg="
+            },
+            {
+                type: "videojs",
+                name: "2 - VTV6",
+                feed: "Global Feed | Vietnam",
+                language: "Vietnamese Language",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/VTV6_logo_2026_final.svg/960px-VTV6_logo_2026_final.svg.png",
+                src: "https://vips-livecdn.fptplay.net/live/media/vtv6/live247-hls-avc/index.m3u8",
+                mimeType: "application/x-mpegURL"
             }
         ];
 
-        function loadChannel(index) {
+        let vjsPlayer = null;
+        let jwInstance = null;
+
+        function switchChannel(index) {
             const ch = channels[index];
             document.getElementById('current-channel-name').innerText = ch.name;
+            document.getElementById('current-language').innerText = `Commentary language: ${ch.language}`;
             document.getElementById('current-logo').src = ch.logo;
-            document.getElementById('main-iframe').src = atob(ch.b64Url);
+
+            const iframeEl = document.getElementById('main-iframe');
+            const vjsContainer = document.getElementById('videojs-container');
+            const jwContainer = document.getElementById('jwplayer-container');
+
+            // Stop VideoJS
+            if (vjsPlayer) {
+                vjsPlayer.pause();
+            }
+
+            // Stop JWPlayer
+            if (jwInstance && jwInstance.getState && jwInstance.getState() === 'playing') {
+                jwInstance.stop();
+            }
+
+            // Reset Iframe
+            iframeEl.src = "about:blank";
+
+            // Hide All Player Containers
+            iframeEl.classList.add('hidden');
+            vjsContainer.classList.add('hidden');
+            jwContainer.classList.add('hidden');
+
+            if (ch.type === "iframe") {
+                iframeEl.classList.remove('hidden');
+                iframeEl.src = atob(ch.b64Url);
+            } 
+            else if (ch.type === "videojs") {
+                vjsContainer.classList.remove('hidden');
+                if (!vjsPlayer) {
+                    vjsPlayer = videojs('videojs-player', { autoplay: true, controls: true });
+                }
+                vjsPlayer.src({ src: ch.src, type: ch.mimeType });
+                vjsPlayer.play();
+            }
+            else if (ch.type === "jwplayer") {
+                jwContainer.classList.remove('hidden');
+                
+                jwInstance = jwplayer("jwplayer-container").setup({
+                    playlist: [{
+                        sources: [{
+                            file: ch.src,
+                            type: ch.mimeType || "hls"
+                        }]
+                    }],
+                    autostart: true,
+                    width: "100%",
+                    height: "100%",
+                    stretching: "uniform"
+                });
+            }
         }
 
-        const channelGrid = document.getElementById('channel-grid');
-        channels.forEach((ch, idx) => {
-            const btn = document.createElement('button');
-            btn.className = "flex items-center space-x-3 p-3 bg-gray-950 hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full";
-            btn.onclick = () => loadChannel(idx);
-            btn.innerHTML = `
-                <img src="${ch.logo}" class="h-8 w-8 object-contain bg-black/50 p-0.5 rounded">
-                <div class="overflow-hidden">
-                    <div class="text-sm font-semibold text-white truncate">${ch.name}</div>
-                    <div class="text-xs text-gray-500">Global Feed | Indonesia</div>
-                </div>
-            `;
-            channelGrid.appendChild(btn);
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const channelGrid = document.getElementById('channel-grid');
+            channels.forEach((ch, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "flex items-center space-x-3 p-3 bg-gray-950 hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full";
+                btn.onclick = () => switchChannel(idx);
+                btn.innerHTML = `
+                    <img src="${ch.logo}" class="h-8 w-8 object-contain bg-black/50 p-0.5 rounded">
+                    <div class="overflow-hidden">
+                        <div class="text-sm font-semibold text-white truncate">${ch.name}</div>
+                        <div class="text-xs text-gray-400">${ch.feed}</div>
+                        <div class="text-[11px] text-red-400 font-medium">${ch.language}</div>
+                    </div>
+                `;
+                channelGrid.appendChild(btn);
+            });
 
-        loadChannel(0);
+            switchChannel(0);
+        });
     </script>
 </body>
 </html>
