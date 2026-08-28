@@ -5,52 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Now Sports Live Event | Sports Hub Official</title>
     
-    <!-- Red Dot Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ef4444'/></svg>" type="image/svg+xml">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dustyRed: '#A84B4B',
-                        warmWhite: '#F9F8F6',
-                        charcoal: '#1E1E24',
-                        charcoalLight: '#2A2A32',
-                        charcoalDark: '#141418',
-                        headerBg: '#0f141d',
-                        headerCyan: '#00a8ff',
-                        tickerRed: '#dc2626',
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Video.js Styles & Script -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 
-    <!-- DevTools Auto-Disable Library -->
     <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 
-    <script>window.CHANNEL_ID = "bundesliga_live_2026";</script>
+    <script>window.CHANNEL_ID = "unifi_liga_super_2026";</script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: #ffffff; }
-        
-        .bottom-section {
-            background-color: #1E1E24;
-            color: #F9F8F6;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
         .glow-effect {
-            box-shadow: 0 0 20px rgba(168, 75, 75, 0.15);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
         }
         @keyframes marquee {
             0% { transform: translateX(100%); }
@@ -63,44 +35,26 @@
             width: 5px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #141418;
+            background: #0b0f19;
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #2A2A32;
+            background: #374151;
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #A84B4B;
-        }
-        .video-js .vjs-big-play-button {
-            background-color: #A84B4B;
-            border-color: #A84B4B;
-            border-radius: 50%;
-            width: 2em;
-            height: 2em;
-            line-height: 2em;
-            margin-top: -1em;
-            margin-left: -1em;
-            color: #F9F8F6;
-        }
-        .tab-btn.active {
-            background-color: #A84B4B;
-            color: #F9F8F6;
-            border-color: #A84B4B;
-            box-shadow: 0 0 15px rgba(168, 75, 75, 0.3);
+            background: #ef4444;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between select-none bg-[#0b0e14]">
+<body class="text-gray-100 min-h-screen flex flex-col justify-between select-none">
 
-    <!-- ================= BAHAGIAN ATAS ================= -->
-    <header class="border-b border-gray-800/60 bg-[#0f141d] sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between">
+    <header class="border-b border-gray-800 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Logo" class="h-9 object-contain">
-                <div class="border-l border-gray-700/80 pl-3 flex flex-col justify-center">
-                    <span class="text-[#00a8ff] font-extrabold text-sm md:text-base tracking-wide uppercase leading-tight">
+                <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Logo" class="h-10 object-contain">
+                <div class="border-l border-gray-700 pl-3 flex flex-col justify-center">
+                    <span class="text-sky-400 font-extrabold text-sm md:text-base tracking-wide uppercase leading-tight">
                         NOW SPORTS LIVE EVENT
                     </span>
                     <span class="text-gray-400 text-xs font-medium">
@@ -111,167 +65,229 @@
         </div>
     </header>
 
-    <div class="bg-[#dc2626] text-white py-2 overflow-hidden whitespace-nowrap font-extrabold text-sm tracking-wide shadow-inner">
+    <div class="bg-red-600 text-white py-2 overflow-hidden whitespace-nowrap font-bold text-sm tracking-wide shadow-inner">
         <div class="inline-block animate-marquee uppercase">
-            EXCLUSIVE : ⚡ BUNDESLIGA LIVE MATCHES &nbsp;|&nbsp; STREAM IT LIVE HERE! &nbsp;|&nbsp; HIGH-BITRATE SECURE STREAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            EXCLUSIVE : 🔥 UNIFI LIGA SUPER 2026 LIVE MATCHES &nbsp;|&nbsp; Stream it live here! &nbsp;|&nbsp; High-bitrate Secure Stream &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
-    <!-- ================= BAHAGIAN BAWAH ================= -->
-    <main class="bottom-section max-w-7xl mx-auto px-4 py-8 flex-grow w-full my-4 rounded-2xl border border-gray-800">
-        
-        <!-- Bundesliga Big Logo Center -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
         <div class="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
-            <div class="bg-white/95 p-4 rounded-2xl border border-gray-300 shadow-lg inline-block mb-3 backdrop-blur-sm">
-                <img src="https://brandlogos.net/wp-content/uploads/2022/08/Bundesliga-horizontal-Logo.png" alt="Bundesliga Logo" class="h-16 md:h-24 object-contain">
-            </div>
+            <img src="https://s3-ap-southeast-1.amazonaws.com/ams-astro/production/IVPVodImages/IVP(STB_OTT_STV)_96458_IVP_LAND_1280x720_IVP_LAND_917x516_96458_2026821_173638.jpg" alt="Unifi Liga Super Logo" class="h-28 md:h-36 object-contain mb-3 rounded-lg shadow-md">
             <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                Official Live Streaming Coverage & Match Center for Bundesliga.
+                Official Live Streaming Coverage for Unifi Liga Super 2026.
             </p>
         </div>
 
-        <!-- Navigation Tabs -->
-        <div class="flex justify-center gap-2 md:gap-4 mb-6 flex-wrap">
-            <button onclick="switchTab('livestream')" id="tab-livestream" class="tab-btn active px-5 py-2.5 rounded-xl font-bold text-sm transition bg-charcoalLight border border-gray-700 hover:bg-gray-700 flex items-center gap-2">
-                <i class="fas fa-tv"></i> Live Stream
-            </button>
-            <button onclick="switchTab('schedule')" id="tab-schedule" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-sm transition bg-charcoalLight border border-gray-700 hover:bg-gray-700 flex items-center gap-2">
-                <i class="fas fa-calendar-alt"></i> Schedule
-            </button>
-            <button onclick="switchTab('scores')" id="tab-scores" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-sm transition bg-charcoalLight border border-gray-700 hover:bg-gray-700 flex items-center gap-2">
-                <i class="fas fa-chart-bar"></i> Scores
-            </button>
-            <button onclick="switchTab('standings')" id="tab-standings" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-sm transition bg-charcoalLight border border-gray-700 hover:bg-gray-700 flex items-center gap-2">
-                <i class="fas fa-list-ol"></i> Standings
-            </button>
-        </div>
-
-        <!-- TAB CONTENT: LIVE STREAM -->
-        <div id="content-livestream" class="tab-content">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-start">
-                <!-- Player Section -->
-                <div class="lg:col-span-2 bg-charcoalLight rounded-2xl border border-gray-800 overflow-hidden shadow-2xl flex flex-col justify-between glow-effect">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-start">
+            
+            <div class="lg:col-span-1 bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col h-[530px] glow-effect">
+                <div class="border-b border-gray-800 pb-2 mb-3">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-red-500 flex items-center gap-2">
+                        <i class="fas fa-calendar-alt"></i> Match Schedule
+                    </h3>
+                </div>
+                
+                <div class="overflow-y-auto custom-scrollbar flex-grow pr-1 space-y-4 text-xs">
                     <div>
-                        <div class="p-4 bg-charcoalDark border-b border-gray-800 flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <img id="current-logo" src="" alt="Channel Logo" class="h-10 w-auto object-contain bg-black/40 p-1.5 rounded-lg border border-gray-700">
-                                <div>
-                                    <span class="text-xs text-dustyRed font-bold uppercase tracking-wider flex items-center gap-1">
-                                        <i class="fas fa-broadcast-tower text-[10px]"></i> Now Streaming
-                                    </span>
-                                    <h2 id="current-channel-name" class="text-lg font-bold text-warmWhite">Loading...</h2>
-                                    <p id="current-language" class="text-xs text-gray-400">Commentary language: -</p>
+                        <span class="bg-yellow-600/20 text-yellow-400 border border-yellow-500/30 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Unifi Liga Super 2026</span>
+                        
+                        <div class="mt-2 space-y-3">
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 28 Ogos</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Sabah FC v Penang FC</div>
+                                        <div class="text-gray-500 text-[9px]">Stadium Likas, Kota Kinabalu</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Terengganu FC v Selangor FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="relative aspect-video bg-black flex justify-center items-center">
-                            <div id="videojs-container" class="w-full h-full">
-                                <video id="videojs-player" class="video-js vjs-default-skin vjs-big-play-centered w-full h-full" controls crossorigin="anonymous"></video>
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 29 Ogos</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Kuala Lumpur City FC v DPMM FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">5:30 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Johor Darul Ta'zim v Star City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Kelantan Red Warrior FC v Kuching City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                </div>
                             </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Ahad, 30 Ogos</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Melaka FC v Negeri Sembilan FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
+                                </div>
+                            </div>
+
+                            <div class="text-yellow-500/80 text-[10px] italic bg-yellow-950/20 p-1.5 rounded border border-yellow-800/30 text-center">
+                                1–2 Sept: Pusingan 16 Piala FA
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 4 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">DPMM FC v Johor Darul Ta'zim</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Kelantan Red Warrior FC v Kuala Lumpur City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 5 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Negeri Sembilan FC v Star City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">4:45 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Sabah FC v Kuching City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Terengganu FC v Penang FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Ahad, 6 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Selangor FC v Melaka FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
+                                </div>
+                            </div>
+
+                            <div class="text-yellow-500/80 text-[10px] italic bg-yellow-950/20 p-1.5 rounded border border-yellow-800/30 text-center">
+                                8–9 Sept: Pusingan 16 Piala FA Kedua
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 11 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Johor Darul Ta'zim v Negeri Sembilan FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 12 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Penang FC v Kelantan Red Warrior FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">4:45 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Melaka FC v Kuching City FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Star City FC v Terengganu FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-400 font-semibold mb-1">Ahad, 13 September</div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Kuala Lumpur City FC v Selangor FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">5:30 PM</span>
+                                </div>
+                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
+                                    <div>
+                                        <div class="font-medium text-white">Sabah FC v DPMM FC</div>
+                                    </div>
+                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Channel Directory Section -->
-                <div class="lg:col-span-1 bg-charcoalLight border border-gray-800 rounded-2xl p-4 glow-effect flex flex-col h-full">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-dustyRed mb-3 flex items-center gap-2 border-b border-gray-800 pb-2">
-                        <i class="fas fa-list"></i> Channel Directory
-                    </h3>
-                    <div id="channel-grid" class="flex flex-col gap-3 overflow-y-auto custom-scrollbar max-h-[480px] pr-1"></div>
+            <div class="lg:col-span-2 bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden shadow-2xl flex flex-col justify-between glow-effect">
+                <div>
+                    <div class="p-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img id="current-logo" src="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
+                            <div>
+                                <span class="text-xs text-red-500 font-bold uppercase tracking-wider flex items-center gap-1">
+                                    <i class="fas fa-broadcast-tower text-[10px]"></i> Now Streaming
+                                </span>
+                                <h2 id="current-channel-name" class="text-lg font-bold text-white">Astro Arena Bola (Server 1)</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative aspect-video bg-black flex justify-center items-center">
+                        <video id="main-player" class="video-js vjs-default-skin vjs-big-play-centered w-full h-full" controls preload="auto" crossorigin="anonymous">
+                        </video>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <!-- TAB CONTENT: SCHEDULE (EASY & COMPACT) -->
-        <div id="content-schedule" class="tab-content hidden">
-            <div id="schedule-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                <!-- Render automatik dari JavaScript -->
-            </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 glow-effect">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-2">
+                <i class="fas fa-list"></i> Select Channel & Server:
+            </h3>
+            <div id="channel-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
         </div>
-
-        <!-- TAB CONTENT: SCORES (EASY & COMPACT) -->
-        <div id="content-scores" class="tab-content hidden">
-            <div id="scores-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                <!-- Render automatik dari JavaScript -->
-            </div>
-        </div>
-
-        <!-- TAB CONTENT: STANDINGS -->
-        <div id="content-standings" class="tab-content hidden">
-            <div class="bg-charcoalLight border border-gray-800 rounded-2xl p-6 glow-effect">
-                <h3 class="text-base font-bold uppercase tracking-wider text-dustyRed mb-4 flex items-center gap-2 border-b border-gray-800 pb-3">
-                    <i class="fas fa-list-ol"></i> Bundesliga Table
-                </h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs md:text-sm text-gray-300">
-                        <thead class="bg-charcoalDark text-gray-400 uppercase text-[11px] tracking-wider border-b border-gray-800">
-                            <tr>
-                                <th class="p-3">Pos</th>
-                                <th class="p-3">Club</th>
-                                <th class="p-3 text-center">MP</th>
-                                <th class="p-3 text-center">W</th>
-                                <th class="p-3 text-center">D</th>
-                                <th class="p-3 text-center">L</th>
-                                <th class="p-3 text-center">GD</th>
-                                <th class="p-3 text-center font-bold text-warmWhite">Pts</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-800/60 font-medium">
-                            <tr class="hover:bg-gray-800/40 transition">
-                                <td class="p-3 font-bold text-dustyRed">1</td>
-                                <td class="p-3 font-semibold text-warmWhite">FC Bayern München</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center font-bold text-warmWhite">0</td>
-                            </tr>
-                            <tr class="hover:bg-gray-800/40 transition">
-                                <td class="p-3 font-bold text-dustyRed">2</td>
-                                <td class="p-3 font-semibold text-warmWhite">Bayer 04 Leverkusen</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center font-bold text-warmWhite">0</td>
-                            </tr>
-                            <tr class="hover:bg-gray-800/40 transition">
-                                <td class="p-3 font-bold text-dustyRed">3</td>
-                                <td class="p-3 font-semibold text-warmWhite">Borussia Dortmund</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center font-bold text-warmWhite">0</td>
-                            </tr>
-                            <tr class="hover:bg-gray-800/40 transition">
-                                <td class="p-3 font-bold text-dustyRed">4</td>
-                                <td class="p-3 font-semibold text-warmWhite">RB Leipzig</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center">0</td>
-                                <td class="p-3 text-center font-bold text-warmWhite">0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
     </main>
 
-    <footer class="border-t border-gray-800 bg-[#0f141d] py-6 text-center text-xs text-gray-500">
+    <footer class="border-t border-gray-800 bg-gray-950 py-6 text-center text-xs text-gray-600">
         <p>&copy; 2026 Now Sports Live Event by Sports Hub Official. All rights reserved.</p>
     </footer>
 
     <script>
-        // 1. Block Window Open
+        // 1. Block Window Open (Prevent Ads / External Links)
         window.open = function() { return null; };
 
         // 2. Anti-DevTools Key Combinations & Right Click Blocking
@@ -285,269 +301,69 @@
             }
         });
 
-        // 3. Tab Switching Function
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        const proxy = "https://bold-sky-a86c.yusoff-rohaidee.workers.dev/?url=";
 
-            document.getElementById(`content-${tabName}`).classList.remove('hidden');
-            document.getElementById(`tab-${tabName}`).classList.add('active');
-        }
-
-        // 4. Channel Stream Data
         const channels = [
             {
-                name: "Telemundo (Puerto Rico)",
-                country: "Puerto Rico",
-                language: "Spanish",
-                src: "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8",
-                logo: "https://i.imgur.com/DVASpQj.png"
+                name: "Astro Arena Bola (Server 1)",
+                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png",
+                url: proxy + encodeURIComponent("https://183.bozztv.com/giatv/giatv-fake/astroarenabola/chunks.m3u8"),
+                server: "Server 1 (Proxy)"
             },
             {
-                name: "Telemundo West (USA)",
-                country: "USA",
-                language: "Spanish",
-                src: "https://streamer.metronethn.com/Telemundo/index.m3u8",
-                logo: "https://i.imgur.com/DVASpQj.png"
+                name: "Astro Arena Bola (Server 2)",
+                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png",
+                url: "https://183.bozztv.com/giatv/giatv-fake/astroarenabola/chunks.m3u8",
+                server: "Server 2 (Direct)"
             },
             {
-                name: "Sky Sports Top Event (Germany)",
-                country: "Germany",
-                language: "German",
-                src: "https://bold-sky-a86c.yusoff-rohaidee.workers.dev/?url=https://1nyaler.streamhostingcdn.top/stream/6/index.m3u8",
-                logo: "https://i.imgur.com/kQ6cVNx.png"
+                name: "Astro Arena Bola 2 (Server 1)",
+                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png",
+                url: proxy + encodeURIComponent("https://183.bozztv.com/giatv/giatv-fake/astroarenabola2/chunks.m3u8"),
+                server: "Server 1 (Proxy)"
             },
             {
-                name: "Sky Sports Bundesliga (Germany)",
-                country: "Germany",
-                language: "German",
-                src: "https://bold-sky-a86c.yusoff-rohaidee.workers.dev/?url=https://1nyaler.streamhostingcdn.top/stream/37/index.m3u8",
-                logo: "https://upload.wikimedia.org/wikipedia/de/c/ca/Sky_Sport_Bundesliga_2020.svg"
-            },
-            {
-                name: "beIN Sports 2 (France)",
-                country: "France",
-                language: "French",
-                src: "https://bold-sky-a86c.yusoff-rohaidee.workers.dev/?url=https://1nyaler.streamhostingcdn.top/stream/14/index.m3u8",
-                logo: "https://i.imgur.com/EG48QI7.png"
+                name: "Astro Arena Bola 2 (Server 2)",
+                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png",
+                url: "https://183.bozztv.com/giatv/giatv-fake/astroarenabola2/chunks.m3u8",
+                server: "Server 2 (Direct)"
             }
         ];
 
-        let vjsPlayer = null;
+        let player = videojs('main-player', {
+            autoplay: true,
+            controls: true,
+            fluid: true
+        });
 
-        function switchChannel(index) {
+        function loadChannel(index) {
             const ch = channels[index];
             document.getElementById('current-channel-name').innerText = ch.name;
-            document.getElementById('current-language').innerText = `Commentary language: ${ch.language}`;
             document.getElementById('current-logo').src = ch.logo;
-
-            if (!vjsPlayer) {
-                vjsPlayer = videojs('videojs-player', { autoplay: true, controls: true });
-            }
-
-            vjsPlayer.src({ src: ch.src, type: 'application/x-mpegURL' });
-            vjsPlayer.play();
-        }
-
-        // 5. DATA SCHEDULE (Copy & paste objek dalam array ini nak tambah match)
-        const schedules = [
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "FC Bayern München", team2: "VfB Stuttgart", date: "Sat, Aug 29, 2026", time: "12:30 AM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "SV Elversberg", team2: "Bayer Leverkusen", date: "Sat, Aug 29, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "1. FC Köln", team2: "TSG Hoffenheim", date: "Sat, Aug 29, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "1. FC Union Berlin", team2: "Eintracht Frankfurt", date: "Sat, Aug 29, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "1. FSV Mainz 05", team2: "SC Paderborn 07", date: "Sat, Aug 29, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "RB Leipzig", team2: "Borussia Mönchengladbach", date: "Sat, Aug 29, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "Borussia Dortmund", team2: "Hamburger SV", date: "Sat, Aug 29, 2026", time: "10:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "SC Freiburg", team2: "Werder Bremen", date: "Sun, Aug 30, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 1", status: "Scheduled", team1: "FC Augsburg", team2: "FC Schalke 04", date: "Sun, Aug 30, 2026", time: "9:30 PM" },
- 
-    // ================= MATCHDAY 2 (fixtures & times CONFIRMED) =================
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "VfB Stuttgart", team2: "1. FC Köln", date: "Sat, Sep 5, 2026", time: "12:30 AM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "SC Paderborn 07", team2: "SC Freiburg", date: "Sat, Sep 5, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "Werder Bremen", team2: "RB Leipzig", date: "Sat, Sep 5, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "Borussia Mönchengladbach", team2: "SV Elversberg", date: "Sat, Sep 5, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "Bayer Leverkusen", team2: "1. FC Union Berlin", date: "Sat, Sep 5, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "TSG Hoffenheim", team2: "Borussia Dortmund", date: "Sat, Sep 5, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "FC Schalke 04", team2: "FC Bayern München", date: "Sat, Sep 5, 2026", time: "10:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "Hamburger SV", team2: "1. FSV Mainz 05", date: "Sun, Sep 6, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 2", status: "Scheduled", team1: "Eintracht Frankfurt", team2: "FC Augsburg", date: "Sun, Sep 6, 2026", time: "9:30 PM" },
- 
-    // ================= MATCHDAY 3 (fixtures & times CONFIRMED) =================
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "1. FC Union Berlin", team2: "FC Schalke 04", date: "Sat, Sep 12, 2026", time: "12:30 AM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "1. FSV Mainz 05", team2: "Eintracht Frankfurt", date: "Sat, Sep 12, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "FC Augsburg", team2: "Bayer Leverkusen", date: "Sat, Sep 12, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "SC Freiburg", team2: "Borussia Mönchengladbach", date: "Sat, Sep 12, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "TSG Hoffenheim", team2: "VfB Stuttgart", date: "Sat, Sep 12, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "Borussia Dortmund", team2: "SC Paderborn 07", date: "Sat, Sep 12, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "1. FC Köln", team2: "Werder Bremen", date: "Sat, Sep 12, 2026", time: "10:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "RB Leipzig", team2: "Hamburger SV", date: "Sun, Sep 13, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 3", status: "Scheduled", team1: "SV Elversberg", team2: "FC Bayern München", date: "Sun, Sep 13, 2026", time: "9:30 PM" },
- 
-    // ================= MATCHDAY 4 (fixtures & times CONFIRMED) =================
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "FC Bayern München", team2: "1. FC Union Berlin", date: "Sat, Sep 19, 2026", time: "12:30 AM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "Werder Bremen", team2: "FC Augsburg", date: "Sat, Sep 19, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "Hamburger SV", team2: "1. FC Köln", date: "Sat, Sep 19, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "Borussia Mönchengladbach", team2: "1. FSV Mainz 05", date: "Sat, Sep 19, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "Eintracht Frankfurt", team2: "SC Freiburg", date: "Sat, Sep 19, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "VfB Stuttgart", team2: "Borussia Dortmund", date: "Sat, Sep 19, 2026", time: "10:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "Bayer Leverkusen", team2: "RB Leipzig", date: "Sun, Sep 20, 2026", time: "7:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "FC Schalke 04", team2: "SV Elversberg", date: "Sun, Sep 20, 2026", time: "9:30 PM" },
-    { tournament: "BUNDESLIGA - MATCHDAY 4", status: "Scheduled", team1: "SC Paderborn 07", team2: "TSG Hoffenheim", date: "Sun, Sep 20, 2026", time: "11:30 PM" }
-        ];
-
-        function renderSchedules() {
-            const container = document.getElementById('schedule-grid');
-            if (!container) return;
             
-            container.innerHTML = schedules.map(item => `
-                <div class="bg-charcoalLight border border-dustyRed/30 rounded-2xl p-4 text-warmWhite shadow-lg hover:border-dustyRed transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-dustyRed font-extrabold uppercase tracking-wider text-xs">${item.tournament}</span>
-                            <span class="text-amber-400 font-bold flex items-center gap-1 text-xs">
-                                <i class="far fa-clock"></i> ${item.status}
-                            </span>
-                        </div>
-
-                        <div class="flex justify-around items-center my-2">
-                            <div class="flex flex-col items-center">
-                                <div class="w-10 h-12 bg-gray-200/10 rounded-lg flex items-center justify-center mb-1 border border-white/10">
-                                    <i class="fas fa-shield-alt text-xl text-gray-300"></i>
-                                </div>
-                                <span class="font-bold text-sm tracking-wide text-center">${item.team1}</span>
-                            </div>
-
-                            <div class="bg-charcoalDark px-2.5 py-1 rounded-lg text-dustyRed font-black text-xs border border-gray-700">
-                                VS
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                                <div class="w-10 h-12 bg-gray-200/10 rounded-lg flex items-center justify-center mb-1 border border-white/10">
-                                    <i class="fas fa-shield-alt text-xl text-gray-300"></i>
-                                </div>
-                                <span class="font-bold text-sm tracking-wide text-center">${item.team2}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-charcoalDark rounded-xl p-2.5 mt-3 border border-gray-800 flex justify-between items-center text-xs text-gray-300">
-                        <div class="flex items-center gap-1.5">
-                            <i class="fas fa-calendar-day text-dustyRed"></i>
-                            <span>${item.date}</span>
-                        </div>
-                        <div class="flex items-center gap-1.5">
-                            <i class="fas fa-clock text-dustyRed"></i>
-                            <span class="font-semibold text-warmWhite">${item.time}</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // 6. DATA SCORES (Copy & paste objek dalam array ini nak tambah result)
-        const scores = [
-            {
-                tournament: "3RD PLACE PLAY-OFF",
-                status: "FT",
-                team1: "France",
-                score1: 4,
-                team2: "England",
-                score2: 6,
-                stadium: "Hard Rock Stadium",
-                date: "Jul 19, 2026",
-                scorers1: ["K. Mbappé 48'", "B. Barcola 54'", "K. Mbappé 66'", "O. Dembélé 90+6'"],
-                scorers2: ["D. Rice 3'", "E. Konsa 18'", "B. Saka 37'", "B. Saka 45+1'", "B. Saka 87' (P)", "J. Bellingham 90+8'"]
-            },
-            {
-                tournament: "BUNDESLIGA - MATCHDAY 1",
-                status: "FT",
-                team1: "FC Bayern",
-                score1: 3,
-                team2: "RB Leipzig",
-                score2: 1,
-                stadium: "Allianz Arena",
-                date: "Aug 22, 2026",
-                scorers1: ["H. Kane 12'", "J. Musiala 45'", "L. Sané 78'"],
-                scorers2: ["L. Openda 60'"]
-            }
-        ];
-
-        function renderScores() {
-            const container = document.getElementById('scores-grid');
-            if (!container) return;
-
-            container.innerHTML = scores.map(item => `
-                <div class="bg-charcoalLight border border-dustyRed/30 rounded-2xl p-4 text-warmWhite shadow-lg hover:border-dustyRed transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-dustyRed font-extrabold uppercase tracking-wider text-xs">${item.tournament}</span>
-                            <span class="text-emerald-400 font-bold flex items-center gap-1 text-[11px] bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded-full">
-                                <i class="fas fa-check-circle"></i> ${item.status}
-                            </span>
-                        </div>
-
-                        <div class="flex justify-around items-center my-2">
-                            <div class="flex flex-col items-center">
-                                <div class="w-10 h-12 bg-gray-200/10 rounded-lg flex items-center justify-center mb-1 border border-white/10">
-                                    <i class="fas fa-shield-alt text-xl text-gray-300"></i>
-                                </div>
-                                <span class="font-bold text-sm tracking-wide text-center">${item.team1}</span>
-                            </div>
-
-                            <div class="bg-charcoalDark px-3 py-1.5 rounded-xl text-dustyRed font-black text-xl border border-dustyRed/30 tracking-wider shadow-inner">
-                                ${item.score1} : ${item.score2}
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                                <div class="w-10 h-12 bg-gray-200/10 rounded-lg flex items-center justify-center mb-1 border border-white/10">
-                                    <i class="fas fa-shield-alt text-xl text-gray-300"></i>
-                                </div>
-                                <span class="font-bold text-sm tracking-wide text-center">${item.team2}</span>
-                            </div>
-                        </div>
-
-                        ${(item.scorers1?.length || item.scorers2?.length) ? `
-                            <div class="grid grid-cols-2 gap-2 mt-3 pt-2 border-t border-gray-800 text-[11px] text-gray-400">
-                                <div class="space-y-0.5 text-left">
-                                    ${item.scorers1 ? item.scorers1.map(s => `<div class="truncate"><i class="fas fa-football-ball text-dustyRed text-[9px] mr-1"></i>${s}</div>`).join('') : ''}
-                                </div>
-                                <div class="space-y-0.5 text-right">
-                                    ${item.scorers2 ? item.scorers2.map(s => `<div class="truncate">${s} <i class="fas fa-football-ball text-dustyRed text-[9px] ml-1"></i></div>`).join('') : ''}
-                                </div>
-                            </div>
-                        ` : ''}
-                    </div>
-
-                    <div class="bg-charcoalDark rounded-xl p-2 mt-3 border border-gray-800 flex justify-between items-center text-[11px] text-gray-400">
-                        <span class="truncate pr-2"><strong class="text-gray-300">${item.stadium}</strong></span>
-                        <span class="shrink-0"><strong class="text-gray-300">${item.date}</strong></span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            const channelGrid = document.getElementById('channel-grid');
-            channels.forEach((ch, idx) => {
-                const btn = document.createElement('button');
-                btn.className = "flex items-center space-x-3 p-3 bg-charcoalDark hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full hover:border-dustyRed/50";
-                btn.onclick = () => switchChannel(idx);
-                btn.innerHTML = `
-                    <img src="${ch.logo}" class="h-8 w-10 object-contain bg-black/40 p-1 rounded border border-gray-800">
-                    <div class="overflow-hidden">
-                        <div class="text-sm font-semibold text-warmWhite truncate">${ch.name}</div>
-                        <div class="text-xs text-gray-400">${ch.country}</div>
-                        <div class="text-[11px] text-dustyRed font-medium">${ch.language}</div>
-                    </div>
-                `;
-                channelGrid.appendChild(btn);
+            player.src({
+                src: ch.url,
+                type: 'application/x-mpegURL'
             });
+            player.play();
+        }
 
-            switchChannel(0);
-            renderSchedules();
-            renderScores();
+        const channelGrid = document.getElementById('channel-grid');
+        channels.forEach((ch, idx) => {
+            const btn = document.createElement('button');
+            btn.className = "flex items-center space-x-3 p-3 bg-gray-950 hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full";
+            btn.onclick = () => loadChannel(idx);
+            btn.innerHTML = `
+                <img src="${ch.logo}" class="h-8 w-8 object-contain bg-black/50 p-0.5 rounded">
+                <div class="overflow-hidden">
+                    <div class="text-sm font-semibold text-white truncate">${ch.name}</div>
+                    <div class="text-xs text-gray-500">${ch.server}</div>
+                </div>
+            `;
+            channelGrid.appendChild(btn);
         });
+
+        loadChannel(0);
     </script>
 </body>
 </html>
