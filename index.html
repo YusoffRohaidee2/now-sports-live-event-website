@@ -4,366 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Now Sports Live Event | Sports Hub Official</title>
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ef4444'/></svg>" type="image/svg+xml">
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ef4444'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-
-    <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
-
-    <script>window.CHANNEL_ID = "unifi_liga_super_2026";</script>
-
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+        }
+        .glass-panel {
+            background: rgba(18, 24, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
         .glow-effect {
             box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
         }
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            animation: marquee 25s linear infinite;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #0b0f19;
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #374151;
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #ef4444;
-        }
     </style>
 </head>
-<body class="text-gray-100 min-h-screen flex flex-col justify-between select-none">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <header class="border-b border-gray-800 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Logo" class="h-10 object-contain">
-                <div class="border-l border-gray-700 pl-3 flex flex-col justify-center">
-                    <span class="text-sky-400 font-extrabold text-sm md:text-base tracking-wide uppercase leading-tight">
-                        NOW SPORTS LIVE EVENT
-                    </span>
-                    <span class="text-gray-400 text-xs font-medium">
-                        by Sports Hub Official
-                    </span>
+    <!-- Header Navigation -->
+    <header class="glass-panel sticky top-0 z-50 px-6 py-4 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Now Sports Logo" class="h-10 object-contain">
+                <div class="hidden sm:block border-l border-gray-700 pl-4">
+                    <span class="text-xs text-blue-400 font-bold tracking-widest block uppercase">Now Sports Live Event</span>
+                    <span class="text-xs text-gray-400">by Sports Hub Official</span>
                 </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="bg-gray-500/10 text-gray-400 border border-gray-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
+                    <span class="w-2 h-2 bg-gray-500 rounded-full"></span> CLOSED
+                </span>
             </div>
         </div>
     </header>
 
-    <div class="bg-red-600 text-white py-2 overflow-hidden whitespace-nowrap font-bold text-sm tracking-wide shadow-inner">
-        <div class="inline-block animate-marquee uppercase">
-            EXCLUSIVE : 🔥 UNIFI LIGA SUPER 2026 LIVE MATCHES &nbsp;|&nbsp; Stream it live here! &nbsp;|&nbsp; High-bitrate Secure Stream &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-    </div>
-
-    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
-        <div class="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
-            <img src="https://s3-ap-southeast-1.amazonaws.com/ams-astro/production/IVPVodImages/IVP(STB_OTT_STV)_96458_IVP_LAND_1280x720_IVP_LAND_917x516_96458_2026821_173638.jpg" alt="Unifi Liga Super Logo" class="h-28 md:h-36 object-contain mb-3 rounded-lg shadow-md">
-            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                Official Live Streaming Coverage for Unifi Liga Super 2026.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-start">
-            
-            <div class="lg:col-span-1 bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col h-[530px] glow-effect">
-                <div class="border-b border-gray-800 pb-2 mb-3">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-red-500 flex items-center gap-2">
-                        <i class="fas fa-calendar-alt"></i> Match Schedule
-                    </h3>
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow flex flex-col items-center justify-center">
+        <div class="max-w-2xl w-full text-center">
+            <div class="glass-panel rounded-2xl p-8 md:p-12 glow-effect border border-red-500/20 flex flex-col items-center justify-center">
+                <div class="w-16 h-16 bg-red-500/10 border border-red-500/30 rounded-full flex items-center justify-center mb-6 text-red-400 text-2xl">
+                    <i class="fas fa-lock"></i>
                 </div>
-                
-                <div class="overflow-y-auto custom-scrollbar flex-grow pr-1 space-y-4 text-xs">
-                    <div>
-                        <span class="bg-yellow-600/20 text-yellow-400 border border-yellow-500/30 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Unifi Liga Super 2026</span>
-                        
-                        <div class="mt-2 space-y-3">
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 28 Ogos</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Sabah FC v Penang FC</div>
-                                        <div class="text-gray-500 text-[9px]">Stadium Likas, Kota Kinabalu</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Terengganu FC v Selangor FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 29 Ogos</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Kuala Lumpur City FC v DPMM FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">5:30 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Johor Darul Ta'zim v Star City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Kelantan Red Warrior FC v Kuching City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Ahad, 30 Ogos</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Melaka FC v Negeri Sembilan FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
-                                </div>
-                            </div>
-
-                            <div class="text-yellow-500/80 text-[10px] italic bg-yellow-950/20 p-1.5 rounded border border-yellow-800/30 text-center">
-                                1–2 Sept: Pusingan 16 Piala FA
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 4 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">DPMM FC v Johor Darul Ta'zim</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Kelantan Red Warrior FC v Kuala Lumpur City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 5 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Negeri Sembilan FC v Star City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">4:45 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Sabah FC v Kuching City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Terengganu FC v Penang FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Ahad, 6 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Selangor FC v Melaka FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
-                                </div>
-                            </div>
-
-                            <div class="text-yellow-500/80 text-[10px] italic bg-yellow-950/20 p-1.5 rounded border border-yellow-800/30 text-center">
-                                8–9 Sept: Pusingan 16 Piala FA Kedua
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Jumaat, 11 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Johor Darul Ta'zim v Negeri Sembilan FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Sabtu, 12 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Penang FC v Kelantan Red Warrior FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">4:45 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Melaka FC v Kuching City FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">8:15 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Star City FC v Terengganu FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">9:00 PM</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-gray-400 font-semibold mb-1">Ahad, 13 September</div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 mb-1 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Kuala Lumpur City FC v Selangor FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">5:30 PM</span>
-                                </div>
-                                <div class="bg-gray-950 p-2 rounded border border-gray-800 flex justify-between items-center">
-                                    <div>
-                                        <div class="font-medium text-white">Sabah FC v DPMM FC</div>
-                                    </div>
-                                    <span class="text-red-400 font-bold ml-2">7:30 PM</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4">This website is closed</h1>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+                    Please wait for other live events on Whatsapp & the official Sports Hub Dashboard
+                </p>
+                <a href="https://sports-hub-official-dashboard.vercel.app/" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition duration-200 shadow-lg shadow-red-600/20">
+                    <i class="fas fa-house"></i> Back to main menu
+                </a>
             </div>
-
-            <div class="lg:col-span-2 bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden shadow-2xl flex flex-col justify-between glow-effect">
-                <div>
-                    <div class="p-4 bg-gray-950 border-b border-gray-800 flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <img id="current-logo" src="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png" alt="Channel Logo" class="h-12 w-12 object-contain bg-black/40 p-1 rounded-lg border border-gray-700">
-                            <div>
-                                <span class="text-xs text-red-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                                    <i class="fas fa-broadcast-tower text-[10px]"></i> Now Streaming
-                                </span>
-                                <h2 id="current-channel-name" class="text-lg font-bold text-white">Astro Arena Bola (Server 1)</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative aspect-video bg-black flex justify-center items-center">
-                        <video id="main-player" class="video-js vjs-default-skin vjs-big-play-centered w-full h-full" controls preload="auto" crossorigin="anonymous">
-                        </video>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 glow-effect">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-2">
-                <i class="fas fa-list"></i> Select Channel & Server:
-            </h3>
-            <div id="channel-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
         </div>
     </main>
 
-    <footer class="border-t border-gray-800 bg-gray-950 py-6 text-center text-xs text-gray-600">
-        <p>&copy; 2026 Now Sports Live Event by Sports Hub Official. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-gray-800 py-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Now Sports Live Event | Sports Hub Official. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // 1. Block Window Open (Prevent Ads / External Links)
-        window.open = function() { return null; };
-
-        // 2. Anti-DevTools Key Combinations & Right Click Blocking
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.keyCode === 123 || 
-               (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
-               (e.ctrlKey && e.keyCode === 85)) {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        const proxy = "https://flat-butterfly-3ef0.yusoffrohaidee1.workers.dev/?url=";
-
-        const channels = [
-            {
-                name: "Astro Arena Bola (Server 1)",
-                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png",
-                url: proxy + encodeURIComponent("https://183.bozztv.com/giatv/giatv-fake/astroarenabola/chunks.m3u8"),
-                server: "Server 1 (Proxy)"
-            },
-            {
-                name: "Astro Arena Bola (Server 2)",
-                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png",
-                url: "https://183.bozztv.com/giatv/giatv-fake/astroarenabola/chunks.m3u8",
-                server: "Server 2 (Direct)"
-            },
-            {
-                name: "Astro Arena Bola 2 (Server 1)",
-                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png",
-                url: proxy + encodeURIComponent("https://183.bozztv.com/giatv/giatv-fake/astroarenabola2/chunks.m3u8"),
-                server: "Server 1 (Proxy)"
-            },
-            {
-                name: "Astro Arena Bola 2 (Server 2)",
-                logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png",
-                url: "https://183.bozztv.com/giatv/giatv-fake/astroarenabola2/chunks.m3u8",
-                server: "Server 2 (Direct)"
-            }
-        ];
-
-        let player = videojs('main-player', {
-            autoplay: true,
-            controls: true,
-            fluid: true
-        });
-
-        function loadChannel(index) {
-            const ch = channels[index];
-            document.getElementById('current-channel-name').innerText = ch.name;
-            document.getElementById('current-logo').src = ch.logo;
-            
-            player.src({
-                src: ch.url,
-                type: 'application/x-mpegURL'
-            });
-            player.play();
-        }
-
-        const channelGrid = document.getElementById('channel-grid');
-        channels.forEach((ch, idx) => {
-            const btn = document.createElement('button');
-            btn.className = "flex items-center space-x-3 p-3 bg-gray-950 hover:bg-gray-800 border border-gray-800 rounded-xl transition text-left w-full";
-            btn.onclick = () => loadChannel(idx);
-            btn.innerHTML = `
-                <img src="${ch.logo}" class="h-8 w-8 object-contain bg-black/50 p-0.5 rounded">
-                <div class="overflow-hidden">
-                    <div class="text-sm font-semibold text-white truncate">${ch.name}</div>
-                    <div class="text-xs text-gray-500">${ch.server}</div>
-                </div>
-            `;
-            channelGrid.appendChild(btn);
-        });
-
-        loadChannel(0);
-    </script>
 </body>
 </html>
