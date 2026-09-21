@@ -54,7 +54,7 @@
                 <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Now Sports Logo" class="h-10 object-contain">
                 <div class="hidden sm:block border-l border-gray-700 pl-4">
                     <span class="text-xs text-blue-400 font-bold tracking-widest block uppercase">Now Sports Live Event</span>
-                    <span class="text-xs text-gray-400">by Sports Hub Official</span>
+                    <span class="text-xs text-gray-400">Sports Hub Official</span>
                 </div>
             </div>
             
@@ -181,21 +181,12 @@
                 </div>
 
                 <!-- Stream Select Buttons -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                    <button onclick="changeStream('https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8')" class="col-span-2 sm:col-span-3 bg-red-600/90 hover:bg-red-500 border border-red-500 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition shadow-lg">
-                        <i class="fas fa-star text-yellow-300"></i> T Sports BD
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button onclick="changeStream('https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8', this)" class="channel-btn active-btn bg-red-600 border border-red-500 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition shadow-lg">
+                        <i class="fas fa-star text-yellow-300"></i> T Sports HD
                     </button>
-                    <button onclick="changeStream('https://beetv.my.id/xstreamx/vd.m3u8?ch=sctv')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
-                        <i class="fas fa-circle-play text-gray-400"></i> SCTV
-                    </button>
-                    <button onclick="changeStream('https://op-flashcon-digdayahd-1.dens.tv/h/h207/index.m3u8')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
+                    <button onclick="changeStream('https://op-flashcon-digdayahd-1.dens.tv/h/h207/index.m3u8', this)" class="channel-btn bg-gray-800/90 hover:bg-gray-700 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition">
                         <i class="fas fa-circle-play text-gray-400"></i> Moji HD
-                    </button>
-                    <button onclick="changeStream('https://beetv.my.id/xstreamx/vd.m3u8?ch=moji')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
-                        <i class="fas fa-circle-play text-gray-400"></i> Moji HD (2)
-                    </button>
-                    <button onclick="changeStream('https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
-                        <i class="fas fa-circle-play text-gray-400"></i> TVRI Sport HD
                     </button>
                 </div>
             </section>
@@ -216,18 +207,6 @@
     </footer>
 
     <script>
-        // Configure HTTP Headers for Vidio Streams inside Video.js
-        if (videojs.Hls && videojs.Hls.xhr) {
-            videojs.Hls.xhr.beforeRequest = function(options) {
-                if (options.uri.includes('beetv.my.id') || options.uri.includes('vidio.com')) {
-                    options.headers = options.headers || {};
-                    options.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
-                    options.headers['Referer'] = 'https://www.vidio.com/';
-                }
-                return options;
-            };
-        }
-
         const player = videojs('main-player', {
             autoplay: true,
             controls: true,
@@ -241,12 +220,22 @@
             }
         });
 
-        function changeStream(url) {
+        function changeStream(url, btnElement) {
+            // Update stream player
             player.src({
                 src: url,
                 type: 'application/x-mpegURL'
             });
             player.play();
+
+            // Reset styles for all channel buttons
+            const buttons = document.querySelectorAll('.channel-btn');
+            buttons.forEach(btn => {
+                btn.className = "channel-btn bg-gray-800/90 hover:bg-gray-700 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition";
+            });
+
+            // Set active style for selected button
+            btnElement.className = "channel-btn bg-red-600 border border-red-500 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition shadow-lg";
         }
     </script>
 
