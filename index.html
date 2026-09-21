@@ -7,6 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ef4444'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Video.js CSS & JS -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
         body {
@@ -19,8 +24,24 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glow-effect {
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+        .video-js {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #ef4444;
         }
     </style>
 </head>
@@ -38,35 +59,196 @@
             </div>
             
             <div class="flex items-center">
-                <span class="bg-gray-500/10 text-gray-400 border border-gray-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
-                    <span class="w-2 h-2 bg-gray-500 rounded-full"></span> CLOSED
+                <span class="bg-red-500/10 text-red-400 border border-red-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
+                    <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> LIVE NOW : FIFA ASEAN CUP 2026
                 </span>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow flex flex-col items-center justify-center">
-        <div class="max-w-2xl w-full text-center">
-            <div class="glass-panel rounded-2xl p-8 md:p-12 glow-effect border border-red-500/20 flex flex-col items-center justify-center">
-                <div class="w-16 h-16 bg-red-500/10 border border-red-500/30 rounded-full flex items-center justify-center mb-6 text-red-400 text-2xl">
-                    <i class="fas fa-lock"></i>
+    <!-- Banner Section -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 my-10 w-full">
+        <div class="rounded-2xl overflow-hidden glass-panel border border-gray-800 shadow-2xl p-2 md:p-3">
+            <img src="https://i.ibb.co/mCx29MPb/image.png" alt="FIFA ASEAN Cup 2026 Banner" class="w-full h-auto max-h-72 object-cover rounded-xl">
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 md:px-6 w-full flex-grow mb-12">
+        <div class="flex flex-col lg:flex-row gap-6 items-start">
+            
+            <!-- LEFT: Match Schedule -->
+            <section class="glass-panel p-4 md:p-5 rounded-2xl w-full lg:w-5/12 flex flex-col h-full">
+                <h2 class="text-lg font-bold mb-3 text-gray-200 flex items-center gap-2">
+                    <i class="fas fa-calendar-alt text-red-500"></i> Match Schedule
+                </h2>
+                <div class="overflow-y-auto max-h-[480px] custom-scrollbar border border-gray-800 rounded-xl">
+                    <table class="w-full text-xs text-left text-gray-300">
+                        <thead class="text-[11px] text-gray-400 uppercase bg-gray-800/80 sticky top-0 z-10 border-b border-gray-700">
+                            <tr>
+                                <th scope="col" class="px-3 py-2.5">Date</th>
+                                <th scope="col" class="px-3 py-2.5">Match</th>
+                                <th scope="col" class="px-3 py-2.5">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Fri 25 Sep</td>
+                                <td class="px-3 py-2.5">Bangladesh vs Malaysia<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Fri 25 Sep</td>
+                                <td class="px-3 py-2.5">Indonesia vs Singapore<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">21:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Sat 26 Sep</td>
+                                <td class="px-3 py-2.5">Pakistan vs Thailand<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Sat 26 Sep</td>
+                                <td class="px-3 py-2.5">Vietnam vs Philippines<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">20:30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Mon 28 Sep</td>
+                                <td class="px-3 py-2.5">Singapore vs Bangladesh<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Mon 28 Sep</td>
+                                <td class="px-3 py-2.5">Malaysia vs Indonesia<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">20:30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Tue 29 Sep</td>
+                                <td class="px-3 py-2.5">Philippines vs Pakistan<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Tue 29 Sep</td>
+                                <td class="px-3 py-2.5">Thailand vs Vietnam<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">20:30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Thu 1 Oct</td>
+                                <td class="px-3 py-2.5">Indonesia vs Bangladesh<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">20:30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Thu 1 Oct</td>
+                                <td class="px-3 py-2.5">Malaysia vs Singapore<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">20:30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Fri 2 Oct</td>
+                                <td class="px-3 py-2.5">Vietnam vs Pakistan<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40">
+                                <td class="px-3 py-2.5 font-semibold text-white">Fri 2 Oct</td>
+                                <td class="px-3 py-2.5">Thailand vs Philippines<br><span class="text-[10px] text-gray-400">SJH, Bandung</span></td>
+                                <td class="px-3 py-2.5 font-medium text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40 bg-red-950/30">
+                                <td class="px-3 py-2.5 font-bold text-red-400">Mon 5 Oct</td>
+                                <td class="px-3 py-2.5 font-semibold text-white">3rd Place: 2nd Group A vs B<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-bold text-red-400">17:00</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/40 bg-red-950/40">
+                                <td class="px-3 py-2.5 font-bold text-red-400">Mon 5 Oct</td>
+                                <td class="px-3 py-2.5 font-semibold text-white">Final: Winner Group A vs B<br><span class="text-[10px] text-gray-400">GBK, Jakarta</span></td>
+                                <td class="px-3 py-2.5 font-bold text-red-400">21:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4">This website is closed</h1>
-                <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
-                    Please wait for other live events on Whatsapp & the official Sports Hub Dashboard
-                </p>
-                <a href="https://sports-hub-official-dashboard.vercel.app/" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition duration-200 shadow-lg shadow-red-600/20">
-                    <i class="fas fa-house"></i> Back to main menu
-                </a>
-            </div>
+            </section>
+
+            <!-- RIGHT: Video.js Live Stream Section -->
+            <section class="glass-panel p-4 md:p-5 rounded-2xl w-full lg:w-7/12">
+                <h2 class="text-lg font-bold mb-3 text-gray-200 flex items-center gap-2">
+                    <i class="fas fa-tv text-red-500"></i> Live Stream Player
+                </h2>
+                
+                <div class="aspect-video w-full mb-3 rounded-xl overflow-hidden border border-gray-800">
+                    <video id="main-player" class="video-js vjs-big-play-centered" controls autoplay muted preload="auto" poster="https://digitalhub.fifa.com/transform/77ea1965-56a6-4862-8357-5448350ace8a/Graphic-for-FIFA-ASEAN-Cup-release?&io=transform:fill,height:800,width:1366&quality=75">
+                        <source src="https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8" type="application/x-mpegURL">
+                        Your browser does not support HLS video playback.
+                    </video>
+                </div>
+
+                <!-- Stream Select Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                    <button onclick="changeStream('https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8')" class="col-span-2 sm:col-span-3 bg-red-600/90 hover:bg-red-500 border border-red-500 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 transition shadow-lg">
+                        <i class="fas fa-star text-yellow-300"></i> T Sports BD
+                    </button>
+                    <button onclick="changeStream('https://beetv.my.id/xstreamx/vd.m3u8?ch=sctv')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
+                        <i class="fas fa-circle-play text-gray-400"></i> SCTV
+                    </button>
+                    <button onclick="changeStream('https://op-flashcon-digdayahd-1.dens.tv/h/h207/index.m3u8')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
+                        <i class="fas fa-circle-play text-gray-400"></i> Moji HD
+                    </button>
+                    <button onclick="changeStream('https://beetv.my.id/xstreamx/vd.m3u8?ch=moji')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
+                        <i class="fas fa-circle-play text-gray-400"></i> Moji HD (2)
+                    </button>
+                    <button onclick="changeStream('https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8')" class="bg-gray-800/90 hover:bg-red-600 border border-gray-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg flex items-center gap-2 transition">
+                        <i class="fas fa-circle-play text-gray-400"></i> TVRI Sport HD
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Navigation Link -->
+        <div class="text-center mt-8">
+            <a href="https://sports-hub-official-dashboard.vercel.app/" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition duration-200">
+                <i class="fas fa-house"></i> Back to main menu
+            </a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="glass-panel border-t border-gray-800 py-6 text-center text-xs text-gray-500">
+    <footer class="glass-panel border-t border-gray-800 py-4 text-center text-xs text-gray-500">
         <p>&copy; 2026 Now Sports Live Event | Sports Hub Official. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Configure HTTP Headers for Vidio Streams inside Video.js
+        if (videojs.Hls && videojs.Hls.xhr) {
+            videojs.Hls.xhr.beforeRequest = function(options) {
+                if (options.uri.includes('beetv.my.id') || options.uri.includes('vidio.com')) {
+                    options.headers = options.headers || {};
+                    options.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
+                    options.headers['Referer'] = 'https://www.vidio.com/';
+                }
+                return options;
+            };
+        }
+
+        const player = videojs('main-player', {
+            autoplay: true,
+            controls: true,
+            preload: 'auto',
+            html5: {
+                vhs: {
+                    overrideNative: true
+                },
+                nativeAudioTracks: false,
+                nativeVideoTracks: false
+            }
+        });
+
+        function changeStream(url) {
+            player.src({
+                src: url,
+                type: 'application/x-mpegURL'
+            });
+            player.play();
+        }
+    </script>
 
 </body>
 </html>
