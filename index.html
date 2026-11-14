@@ -5,42 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Now Sports Live Event | Sports Hub Official</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23eab308'/></svg>" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2310b981'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Video.js CSS & JS -->
+    <!-- Video.js CSS & JS (v8.10.0) -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
+            background-color: #090d16;
             color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(234, 179, 8, 0.07) 0%, transparent 45%);
         }
         
-        .font-gold {
-            font-family: 'Cinzel', serif;
+        .font-display {
+            font-family: 'Oswald', sans-serif;
         }
         
         .glass-panel {
-            background: rgba(18, 24, 38, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(234, 179, 8, 0.2);
+            background: rgba(15, 22, 36, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(20, 29, 46, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.45);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .malaysia-highlight {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.14) 0%, rgba(17, 24, 39, 0.9) 100%);
+            border: 1px solid rgba(234, 179, 8, 0.45);
+        }
+
+        .malaysia-highlight:hover {
+            border-color: rgba(234, 179, 8, 0.85);
+            box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.18);
         }
         
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF5C0 0%, #EAB308 50%, #A16207 100%);
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #34d399 55%, #eab308 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
-        .gold-border {
-            border-color: rgba(234, 179, 8, 0.3);
-        }
 
+        /* Video.js Custom Styling */
         .video-js {
             width: 100%;
             height: 100%;
@@ -48,400 +71,398 @@
             overflow: hidden;
         }
 
+        .vjs-big-play-button {
+            background-color: rgba(16, 185, 129, 0.85) !important;
+            border: none !important;
+            border-radius: 9999px !important;
+            width: 68px !important;
+            height: 68px !important;
+            line-height: 68px !important;
+            margin-left: -34px !important;
+            margin-top: -34px !important;
+            transition: transform 0.2s ease, background-color 0.2s ease !important;
+        }
+
+        .video-js:hover .vjs-big-play-button {
+            background-color: #10b981 !important;
+            transform: scale(1.08);
+        }
+
+        /* Custom Scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
+            height: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
             background: rgba(15, 23, 42, 0.6);
+            border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #ca8a04;
+            background: #10b981;
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #eab308;
+            background: #34d399;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
 
     <!-- Header Navigation -->
-    <header class="glass-panel sticky top-0 z-50 px-6 py-4 border-b">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <img src="https://i.ibb.co/w37XMJR/download-3.png" alt="Now Sports Logo" class="h-10 object-contain">
+    <header class="glass-panel sticky top-0 z-50 px-4 md:px-8 py-3.5 border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 md:space-x-4">
+                <img src="https://i.ibb.co/w37XMJR/download-3.png" 
+                     alt="Now Sports Logo" 
+                     class="h-9 md:h-10 object-contain"
+                     onerror="this.onerror=null; this.src='https://placehold.co/140x40/0f172a/10b981?text=NOW+SPORTS';">
                 <div class="hidden sm:block border-l border-gray-700 pl-4">
-                    <span class="text-xs text-yellow-500 font-bold tracking-widest block uppercase">Now Sports Live Event</span>
+                    <span class="text-xs text-emerald-400 font-bold tracking-widest block uppercase">Now Sports Live Event</span>
                     <span class="text-xs text-gray-400">Sports Hub Official</span>
                 </div>
             </div>
             
-            <div class="flex items-center">
-                <span class="bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
-                    <span class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span> SPECIAL EVENT : BALLON D'OR 2026
+            <div class="flex items-center gap-2">
+                <span class="bg-emerald-500/15 text-emerald-300 border border-emerald-500/35 text-[11px] md:text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-sm">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+                    <span>LIVE EVENT : FOOTBALL FRIENDLIES</span>
                 </span>
             </div>
         </div>
     </header>
 
-    <!-- Banner Section -->
-    <div class="max-w-7xl mx-auto px-4 md:px-8 mt-6 mb-4 w-full">
-        <div class="rounded-2xl overflow-hidden glass-panel gold-border shadow-2xl p-2 md:p-3 relative">
-            <img src="https://image.discovery.indazn.com/ca/v2/ca/image?id=c51f7bfe-d0fb-4813-ad22-8744bfa4b66c&quality=20" 
-                 alt="Ballon d'Or 2026 Banner" 
-                 class="w-full h-auto max-h-80 object-cover rounded-xl"
-                 onerror="this.onerror=null; this.src='https://placehold.co/1200x400/111827/eab308?text=Ballon+d%27Or+2026+Awards';">
-        </div>
-    </div>
+    <!-- Hero / Event Header -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 pt-6 pb-4 w-full">
+        <div class="glass-panel rounded-2xl p-5 md:p-7 relative overflow-hidden border border-emerald-500/20 shadow-2xl">
+            <!-- Decorative Pitch Lines -->
+            <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full border border-emerald-500/10 pointer-events-none"></div>
+            <div class="absolute -right-8 -top-8 w-48 h-48 rounded-full border border-yellow-500/10 pointer-events-none"></div>
 
-    <!-- Event Title & Countdown Bar -->
-    <div class="max-w-7xl mx-auto px-4 md:px-8 w-full mb-6">
-        <div class="glass-panel gold-border rounded-2xl p-6 text-center shadow-xl">
-            <h1 class="font-gold text-3xl md:text-5xl font-extrabold gold-gradient-text tracking-wide mb-2">
-                Ballon d'Or 2026 Awards
-            </h1>
-            <p class="text-gray-400 text-xs md:text-sm font-medium mb-4">
-                <i class="far fa-clock text-yellow-500 mr-1"></i> Live Ceremony Starts: <span class="text-yellow-400 font-semibold">Tuesday, 27 October 2026 • 03:00 AM GMT+8</span>
-            </p>
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold px-3 py-1 rounded-lg mb-3">
+                        <i class="fas fa-futbol"></i> FIFA INTERNATIONAL MATCH WINDOW
+                    </div>
+                    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wide hero-gradient-text mb-2">
+                        International Football Friendlies 2026
+                    </h1>
+                    <p class="text-gray-300 text-xs sm:text-sm font-medium flex flex-wrap items-center gap-2">
+                        <span><i class="fas fa-satellite-dish text-emerald-400 mr-1"></i> Live Broadcasts & Match Center</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-yellow-400 font-semibold"><i class="far fa-clock mr-1"></i> All Times in GMT+8 (Malaysia Time)</span>
+                    </p>
+                </div>
 
-            <!-- Countdown Timer -->
-            <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 max-w-lg mx-auto">
-                <div class="bg-gray-900/90 border border-yellow-500/30 rounded-xl p-2 md:p-3 text-center">
-                    <span id="days" class="text-2xl md:text-4xl font-extrabold text-yellow-400 block">00</span>
-                    <span class="text-[10px] md:text-xs text-gray-400 uppercase font-semibold">Days</span>
-                </div>
-                <div class="bg-gray-900/90 border border-yellow-500/30 rounded-xl p-2 md:p-3 text-center">
-                    <span id="hours" class="text-2xl md:text-4xl font-extrabold text-yellow-400 block">00</span>
-                    <span class="text-[10px] md:text-xs text-gray-400 uppercase font-semibold">Hours</span>
-                </div>
-                <div class="bg-gray-900/90 border border-yellow-500/30 rounded-xl p-2 md:p-3 text-center">
-                    <span id="minutes" class="text-2xl md:text-4xl font-extrabold text-yellow-400 block">00</span>
-                    <span class="text-[10px] md:text-xs text-gray-400 uppercase font-semibold">Minutes</span>
-                </div>
-                <div class="bg-gray-900/90 border border-yellow-500/30 rounded-xl p-2 md:p-3 text-center">
-                    <span id="seconds" class="text-2xl md:text-4xl font-extrabold text-yellow-400 block">00</span>
-                    <span class="text-[10px] md:text-xs text-gray-400 uppercase font-semibold">Seconds</span>
+                <!-- Dynamic Next / Current Match Status Card -->
+                <div id="dynamic-match-banner" class="bg-gray-900/90 border border-emerald-500/30 rounded-xl p-4 lg:min-w-[340px] shadow-inner">
+                    <div class="flex items-center justify-between text-[11px] uppercase tracking-wider font-bold mb-1.5">
+                        <span id="status-badge" class="text-emerald-400 flex items-center gap-1.5">
+                            <i class="fas fa-bolt"></i> UPCOMING MATCH
+                        </span>
+                        <span id="status-channel" class="text-gray-400 bg-gray-800 px-2 py-0.5 rounded">Loading...</span>
+                    </div>
+                    <div id="status-match-title" class="text-base md:text-lg font-extrabold text-white mb-1">
+                        Checking Schedule...
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-400">
+                        <span id="status-match-time">--</span>
+                        <span id="status-countdown" class="font-mono font-bold text-yellow-400 bg-yellow-500/10 px-2 py-0.5 rounded border border-yellow-500/20">
+                            --:--:--
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Navigation Tabs -->
-    <div class="max-w-7xl mx-auto px-4 md:px-8 w-full mb-6">
-        <div class="flex border-b border-gray-800 gap-2">
-            <button id="tab-live-btn" onclick="switchTab('live')" class="py-3 px-6 text-sm font-bold border-b-2 border-yellow-500 text-yellow-400 flex items-center gap-2 transition">
-                <i class="fas fa-play-circle"></i> Live Stream & Event
-            </button>
-            <button id="tab-nominees-btn" onclick="switchTab('nominees')" class="py-3 px-6 text-sm font-bold border-b-2 border-transparent text-gray-400 hover:text-yellow-400 flex items-center gap-2 transition">
-                <i class="fas fa-trophy text-yellow-500"></i> Ballon d'Or 2026 Nominees
-            </button>
-        </div>
-    </div>
-
-    <!-- TAB 1: Live Stream View -->
-    <main id="tab-live-content" class="max-w-7xl mx-auto px-4 md:px-8 w-full flex-grow mb-12">
-        <div class="flex flex-col lg:flex-row gap-6 items-start">
+    <!-- Main Content: Video Player & Interactive Schedule -->
+    <main class="max-w-7xl mx-auto px-4 md:px-8 w-full flex-grow mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             
-            <!-- Video Player -->
-            <section class="glass-panel gold-border p-4 md:p-5 rounded-2xl w-full lg:w-8/12">
-                <h2 class="text-lg font-bold mb-3 text-gray-200 flex items-center gap-2">
-                    <i class="fas fa-tv text-yellow-500"></i> Official Live Broadcast
-                </h2>
+            <!-- Left Column (7/12): Video.js Live Player & Channel Switcher -->
+            <section id="player-section" class="glass-panel p-4 md:p-5 rounded-2xl lg:col-span-7 border border-white/10 shadow-2xl scroll-mt-24">
                 
-                <div class="aspect-video w-full mb-3 rounded-xl overflow-hidden border border-gray-800 bg-black">
-                    <video id="main-player" class="video-js vjs-big-play-centered" controls autoplay muted preload="auto" poster="https://image.discovery.indazn.com/ca/v2/ca/image?id=c51f7bfe-d0fb-4813-ad22-8744bfa4b66c&quality=20">
-                        <source src="https://dq37unyetkpcz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-m04j89j7k5gtp/LEquipe_FR.m3u8" type="application/x-mpegURL">
-                        Browser anda tidak menyokong main semula video HLS.
+                <!-- Player Top Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-800">
+                    <div class="flex items-center gap-2.5">
+                        <span class="flex h-3 w-3 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </span>
+                        <h2 class="text-sm sm:text-base font-bold text-gray-200">
+                            Now Playing: <span id="now-playing-label" class="text-emerald-400 font-extrabold">Sukan+</span>
+                        </h2>
+                    </div>
+                    <span id="stream-quality-badge" class="text-[11px] font-semibold bg-gray-800 text-gray-300 border border-gray-700 px-2.5 py-1 rounded-md">
+                        <i class="fas fa-signal text-emerald-400 mr-1"></i> HLS HD Stream
+                    </span>
+                </div>
+                
+                <!-- 16:9 Responsive Video.js Container -->
+                <div class="aspect-video w-full mb-4 rounded-xl overflow-hidden border border-gray-800 bg-black shadow-inner relative">
+                    <video id="main-player" class="video-js vjs-big-play-centered" controls autoplay muted playsinline preload="auto">
+                        <source src="https://0pnspbp7iq.tenbytecdn.com/live/sukanrtm/playlist.m3u8?md5=d37IcGPjis7vNQ_rIuF7yA&expires=1791181673" type="application/x-mpegURL">
+                        Your browser does not support HLS video playback.
                     </video>
                 </div>
 
-                <!-- Channel / Stream Selection Button -->
-                <div class="grid grid-cols-1 gap-2.5">
-                    <button onclick="changeStream('https://dq37unyetkpcz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-m04j89j7k5gtp/LEquipe_FR.m3u8', this)" class="channel-btn bg-yellow-600 border border-yellow-500 text-white text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-between transition shadow-lg hover:bg-yellow-500">
-                        <span class="flex items-center gap-2">
-                            <i class="fas fa-circle-play text-white"></i> L'Équipe FR (Ballon d'Or Live Stream)
+                <!-- Stream Notification Message Box (Replaces any alert) -->
+                <div id="player-toast" class="hidden mb-4 bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs font-medium px-3.5 py-2.5 rounded-xl flex items-center justify-between">
+                    <span id="player-toast-text"><i class="fas fa-circle-check mr-1.5"></i> Switched channel stream.</span>
+                    <button onclick="document.getElementById('player-toast').classList.add('hidden')" class="text-emerald-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Channel Switcher Header -->
+                <div class="flex items-center justify-between mb-2.5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                        <i class="fas fa-tv text-emerald-400 mr-1.5"></i> Select Broadcast Channel (4 Feeds)
+                    </span>
+                    <button onclick="reloadCurrentStream()" class="text-xs text-gray-400 hover:text-emerald-400 transition flex items-center gap-1">
+                        <i class="fas fa-rotate-right"></i> Refresh Stream
+                    </button>
+                </div>
+
+                <!-- 4 Interactive Channel Switcher Buttons -->
+                <div id="channel-buttons-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- Channel 1: Sukan+ -->
+                    <button type="button"
+                            data-channel="Sukan+"
+                            onclick="selectChannel('Sukan+')"
+                            class="channel-btn active-channel bg-emerald-600/20 border-2 border-emerald-500 text-white p-3.5 rounded-xl flex items-center justify-between transition text-left shadow-lg">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-500 text-gray-950 flex items-center justify-center font-black text-sm shrink-0">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="truncate">
+                                <div class="font-bold text-sm text-white truncate">Sukan+</div>
+                                <div class="text-[11px] text-emerald-300 truncate">RTM Sports Malaysia</div>
+                            </div>
+                        </div>
+                        <span class="live-pill bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2 animate-pulse">
+                            LIVE
                         </span>
-                        <span class="bg-black/30 text-[10px] uppercase font-semibold px-2 py-0.5 rounded">Primary Feed</span>
+                    </button>
+
+                    <!-- Channel 2: True Premier Football HD 4 -->
+                    <button type="button"
+                            data-channel="True Premier Football HD 4"
+                            onclick="selectChannel('True Premier Football HD 4')"
+                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="truncate">
+                                <div class="font-bold text-sm text-gray-100 truncate">True Premier Football HD 4</div>
+                                <div class="text-[11px] text-gray-400 truncate">TrueVisions Sports</div>
+                            </div>
+                        </div>
+                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
+                            CH 2
+                        </span>
+                    </button>
+
+                    <!-- Channel 3: Jordan TV Sport -->
+                    <button type="button"
+                            data-channel="Jordan TV Sport"
+                            onclick="selectChannel('Jordan TV Sport')"
+                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="truncate">
+                                <div class="font-bold text-sm text-gray-100 truncate">Jordan TV Sport</div>
+                                <div class="text-[11px] text-gray-400 truncate">JRTV Sports HD</div>
+                            </div>
+                        </div>
+                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
+                            CH 3
+                        </span>
+                    </button>
+
+                    <!-- Channel 4: beIN Sports 9 Arabia -->
+                    <button type="button"
+                            data-channel="beIN Sports 9 Arabia"
+                            onclick="selectChannel('beIN Sports 9 Arabia')"
+                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="truncate">
+                                <div class="font-bold text-sm text-gray-100 truncate">beIN Sports 9 Arabia</div>
+                                <div class="text-[11px] text-gray-400 truncate">beIN MENA HD</div>
+                            </div>
+                        </div>
+                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
+                            CH 4
+                        </span>
                     </button>
                 </div>
             </section>
 
-            <!-- Event Details / Right Column -->
-            <section class="glass-panel gold-border p-5 rounded-2xl w-full lg:w-4/12 flex flex-col h-full">
-                <h2 class="text-lg font-bold mb-4 text-gray-200 flex items-center gap-2 border-b border-gray-800 pb-3">
-                    <i class="fas fa-star text-yellow-500"></i> Event Highlights
-                </h2>
-                <div class="space-y-4 text-xs text-gray-300">
-                    <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
-                        <span class="text-yellow-500 font-bold block mb-1">📍 Venue</span>
-                        <p class="text-gray-200">Théâtre du Châtelet, Paris, France</p>
-                    </div>
-                    <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
-                        <span class="text-yellow-500 font-bold block mb-1">🏆 Trophies Presented</span>
-                        <ul class="list-disc list-inside space-y-1 text-gray-300">
-                            <li>Men’s & Women’s Ballon d’Or</li>
-                            <li>Kopa Trophy (Best Young Player)</li>
-                            <li>Yashin Trophy (Best Goalkeeper)</li>
-                            <li>Men’s & Women’s Coach of the Year</li>
-                            <li>Men’s & Women’s Club of the Year</li>
-                        </ul>
-                    </div>
-                    <div class="bg-yellow-500/10 border border-yellow-500/30 p-3 rounded-xl">
-                        <span class="text-yellow-400 font-bold block mb-1"><i class="fas fa-circle-info"></i> Information</span>
-                        <p class="text-gray-300 leading-relaxed">
-                            Watch the prestigious 2026 Ballon d'Or ceremony live as the world's best football players and coaches gather to receive football's highest individual honors.
-                        </p>
-                    </div>
+            <!-- Right Column (5/12): TV & Match Schedule -->
+            <section class="glass-panel p-4 md:p-5 rounded-2xl lg:col-span-5 border border-white/10 shadow-2xl flex flex-col">
+                <div class="flex items-center justify-between mb-3 pb-3 border-b border-gray-800">
+                    <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                        <i class="far fa-calendar-alt text-yellow-400"></i> TV & Match Schedule
+                    </h2>
+                    <span class="text-[11px] font-semibold text-gray-400 bg-gray-900 px-2.5 py-1 rounded-full border border-gray-800">
+                        5 Friendlies
+                    </span>
+                </div>
+
+                <!-- Channel Filter Tabs -->
+                <div class="flex gap-1.5 overflow-x-auto pb-2.5 mb-3 custom-scrollbar" id="filter-tabs">
+                    <button onclick="filterSchedule('ALL', this)" class="filter-tab bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition">
+                        All Channels
+                    </button>
+                    <button onclick="filterSchedule('Sukan+', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
+                        Sukan+
+                    </button>
+                    <button onclick="filterSchedule('True Premier Football HD 4', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
+                        True Premier 4
+                    </button>
+                    <button onclick="filterSchedule('Jordan TV Sport', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
+                        Jordan TV Sport
+                    </button>
+                    <button onclick="filterSchedule('beIN Sports 9 Arabia', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
+                        beIN Sports 9
+                    </button>
+                </div>
+
+                <!-- Match Cards List -->
+                <div id="schedule-list" class="space-y-3 max-h-[620px] overflow-y-auto pr-1 custom-scrollbar">
+                    <!-- Populated via JavaScript -->
                 </div>
             </section>
 
         </div>
     </main>
 
-    <!-- TAB 2: Nominees View -->
-    <main id="tab-nominees-content" class="max-w-7xl mx-auto px-4 md:px-8 w-full flex-grow mb-12 hidden">
-        <div class="glass-panel gold-border p-6 rounded-2xl">
-            <h2 class="font-gold text-2xl md:text-3xl font-extrabold gold-gradient-text mb-6 text-center">
-                Official Nominees
-            </h2>
-
-            <div class="space-y-8">
-                <!-- Men's Ballon d'Or -->
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3 flex items-center justify-between">
-                        <span><i class="fas fa-mars text-blue-400 mr-2"></i> Men’s Ballon d’Or</span>
-                        <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">30 Nominees</span>
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs">
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Jude Bellingham <span class="text-gray-400">(Real Madrid)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Pau Cubarsí <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Marc Cucurella <span class="text-gray-400">(Real Madrid)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Ousmane Dembélé <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Luis Díaz <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Bruno Fernandes <span class="text-gray-400">(Man United)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Gabriel Magalhães <span class="text-gray-400">(Arsenal)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Erling Haaland <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Harry Kane <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Achraf Hakimi <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Khvicha Kvaratskhelia <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Lamine Yamal <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Sadio Mané <span class="text-gray-400">(Al Nassr)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Marquinhos <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Lautaro Martínez <span class="text-gray-400">(Inter)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Kylian Mbappé <span class="text-gray-400">(Real Madrid)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Nuno Mendes <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Lionel Messi <span class="text-gray-400">(Inter Miami)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">João Neves <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Michael Olise <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Willian Pacho <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Julián Quiñones <span class="text-gray-400">(Al Qadsiah)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Declan Rice <span class="text-gray-400">(Arsenal)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Rodri <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Fabián Ruiz <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">William Saliba <span class="text-gray-400">(Arsenal)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Ferran Torres <span class="text-gray-400">(PSG)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Dayot Upamecano <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Vinícius Júnior <span class="text-gray-400">(Real Madrid)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Vitinha <span class="text-gray-400">(PSG)</span></div>
-                    </div>
-                </div>
-
-                <!-- Women's Ballon d'Or -->
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3 flex items-center justify-between">
-                        <span><i class="fas fa-venus text-pink-400 mr-2"></i> Women’s Ballon d’Or</span>
-                        <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">30 Nominees</span>
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs">
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Selma Bacha <span class="text-gray-400">(OL Lyonnes)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Barbra Banda <span class="text-gray-400">(Orlando Pride)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Klara Bühl <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Esmee Brugts <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Mariona Caldentey <span class="text-gray-400">(Arsenal)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Scarlett Camberos <span class="text-gray-400">(Club América)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Kerstin Casparij <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Temwa Chawinga <span class="text-gray-400">(Kansas City Current)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Cata Coll <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Melchie Dumornay <span class="text-gray-400">(OL Lyonnes)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Caroline Graham Hansen <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Alex Greenwood <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Patri Guijarro <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Pernille Harder <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Yui Hasegawa <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Rose Lavelle <span class="text-gray-400">(Gotham FC)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Mapi León <span class="text-gray-400">(London City Lionesses)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Lorena <span class="text-gray-400">(Kansas City Current)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Melvine Malard <span class="text-gray-400">(Chelsea)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Manaka Matsukubo <span class="text-gray-400">(Chelsea)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Vivianne Miedema <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Ewa Pajor <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Claudia Pina <span class="text-gray-400">(Barcelona)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Alexia Putellas <span class="text-gray-400">(London City Lionesses)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Wendie Renard <span class="text-gray-400">(OL Lyonnes)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Alessia Russo <span class="text-gray-400">(Arsenal)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Khadija Shaw <span class="text-gray-400">(Man City)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Momoko Tanikawa <span class="text-gray-400">(Bayern)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Caroline Weir <span class="text-gray-400">(OL Lyonnes)</span></div>
-                        <div class="bg-gray-900/70 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition">Tessa Wullaert <span class="text-gray-400">(Como)</span></div>
-                    </div>
-                </div>
-
-                <!-- Young Player & Goalkeeper Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Men’s Young Player (Kopa Trophy) -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-child text-yellow-400 mr-2"></i> Men’s Young Player (Kopa Trophy)
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Ayyoub Bouaddi <span class="text-gray-400">(Man City)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Kerim Alajbegovic <span class="text-gray-400">(Juventus)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Yan Diomandé <span class="text-gray-400">(Real Madrid)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Pau Cubarsí <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Johan Manzambi <span class="text-gray-400">(Aston Villa)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Lamine Yamal <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Eli Junior Kroupi <span class="text-gray-400">(Bournemouth)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Ibrahim Maza <span class="text-gray-400">(Leverkusen)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Warren Zaïre-Emery <span class="text-gray-400">(PSG)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Lennart Karl <span class="text-gray-400">(Bayern)</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Women’s Young Player -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-child text-pink-400 mr-2"></i> Women’s Young Player
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Veerle Buurman <span class="text-gray-400">(Chelsea)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Vicky López <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Felicia Schröder <span class="text-gray-400">(Real Madrid)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Clara Serrajordi <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Lily Yohannes <span class="text-gray-400">(OL Lyonnes)</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Goalkeepers Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Men’s Goalkeeper (Yashin Trophy) -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-mitten text-blue-400 mr-2"></i> Men’s Goalkeeper (Yashin Trophy)
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Yassine Bounou <span class="text-gray-400">(Al Hilal)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Joan García <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Gregor Kobel <span class="text-gray-400">(Dortmund)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Emiliano Martínez <span class="text-gray-400">(Chelsea)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Edouard Mendy <span class="text-gray-400">(Al Ahli)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">David Raya <span class="text-gray-400">(Arsenal)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Unai Simón <span class="text-gray-400">(Athletic Bilbao)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Vozinha <span class="text-gray-400">(Colo Colo)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Matvey Safonov <span class="text-gray-400">(PSG)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Thibaut Courtois <span class="text-gray-400">(Real Madrid)</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Women’s Goalkeeper -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-mitten text-pink-400 mr-2"></i> Women’s Goalkeeper
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Hannah Hampton <span class="text-gray-400">(Chelsea)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Lorena <span class="text-gray-400">(Kansas City Current)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Ayaka Yamashita <span class="text-gray-400">(Man City)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Cata Coll <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Ann-Katrin Berger <span class="text-gray-400">(Gotham FC)</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coaches Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Men’s Coach of the Year -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-user-tie text-blue-400 mr-2"></i> Men’s Coach of the Year
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Mikel Arteta <span class="text-gray-400">(Arsenal)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Luis de la Fuente <span class="text-gray-400">(Spain)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Unai Emery <span class="text-gray-400">(Aston Villa)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Vincent Kompany <span class="text-gray-400">(Bayern)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Luis Enrique <span class="text-gray-400">(PSG)</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Women’s Coach of the Year -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-user-tie text-pink-400 mr-2"></i> Women’s Coach of the Year
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Jonatan Giráldez <span class="text-gray-400">(OL Lyonnes)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Andrée Jeglertz <span class="text-gray-400">(Man City)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Nils Nielsen <span class="text-gray-400">(Japan)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Pere Romeu <span class="text-gray-400">(Barcelona)</span></div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Elena Sadiku <span class="text-gray-400">(BK Häcken)</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clubs Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Men’s Club of the Year -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-shield-halved text-blue-400 mr-2"></i> Men’s Club of the Year
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Arsenal</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Bayern Munich</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Bodø/Glimt</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Flamengo</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">PSG</div>
-                        </div>
-                    </div>
-
-                    <!-- Women’s Club of the Year -->
-                    <div>
-                        <h3 class="text-md font-bold text-yellow-400 border-b border-yellow-500/30 pb-2 mb-3">
-                            <i class="fas fa-shield-halved text-pink-400 mr-2"></i> Women’s Club of the Year
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">FC Barcelona</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Bayern Munich</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Club América</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Manchester City</div>
-                            <div class="bg-gray-900/70 p-2 rounded border border-gray-800">Olympique Lyonnais</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- Navigation Link -->
-    <div class="text-center mb-8">
-        <a href="https://sports-hub-official-dashboard.vercel.app/" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition duration-200">
-            <i class="fas fa-house"></i> Back to main menu
+    <!-- Back to Main Menu Navigation -->
+    <div class="text-center mb-8 px-4">
+        <a href="https://sports-hub-official-dashboard.vercel.app/" class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 border border-gray-700 hover:border-emerald-500/50 text-white font-semibold text-xs px-6 py-3 rounded-xl transition duration-200 shadow-lg">
+            <i class="fas fa-house text-emerald-400"></i> Back to main menu
         </a>
     </div>
 
     <!-- Footer -->
-    <footer class="glass-panel border-t gold-border py-4 text-center text-xs text-gray-500">
+    <footer class="glass-panel border-t border-white/10 py-4 px-4 text-center text-xs text-gray-400">
         <p>&copy; 2026 Now Sports Live Event | Sports Hub Official. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Initialize Video.js player
+        // Channel Streams Configuration
+        const CHANNELS = {
+            "Sukan+": {
+                name: "Sukan+",
+                subtitle: "RTM Sports Malaysia",
+                url: "https://0pnspbp7iq.tenbytecdn.com/live/sukanrtm/playlist.m3u8?md5=d37IcGPjis7vNQ_rIuF7yA&expires=1791181673"
+            },
+            "True Premier Football HD 4": {
+                name: "True Premier Football HD 4",
+                subtitle: "TrueVisions Sports",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://103.253.74.210:7070/stream/92/index.m3u8"
+            },
+            "Jordan TV Sport": {
+                name: "Jordan TV Sport",
+                subtitle: "JRTV Sports HD",
+                url: "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8"
+            },
+            "beIN Sports 9 Arabia": {
+                name: "beIN Sports 9 Arabia",
+                subtitle: "beIN MENA HD",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://yusftsoreforver.ddns.net/live/ar/qa/bein/bein_sport_9_hd/index.m3u8"
+            }
+        };
+
+        // Football Friendlies Schedule Data (Sorted chronologically in GMT+8)
+        const MATCHES = [
+            {
+                id: 1,
+                dateLabel: "Saturday, 14 November",
+                timeLabel: "4:00 PM",
+                isoStart: "2026-11-14T16:00:00+08:00",
+                home: "Thailand U23",
+                away: "Singapore U23",
+                homeFlag: "🇹🇭",
+                awayFlag: "🇸🇬",
+                competition: "International Friendly",
+                channel: "True Premier Football HD 4",
+                channelDisplay: "True Premier Football HD 4",
+                isMalaysia: false
+            },
+            {
+                id: 2,
+                dateLabel: "Saturday, 14 November",
+                timeLabel: "8:00 PM",
+                isoStart: "2026-11-14T20:00:00+08:00",
+                home: "China",
+                away: "Malaysia",
+                homeFlag: "🇨🇳",
+                awayFlag: "🇲🇾",
+                competition: "International Friendly",
+                channel: "Sukan+",
+                channelDisplay: "Sukan+",
+                isMalaysia: true
+            },
+            {
+                id: 3,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "2:00 AM",
+                isoStart: "2026-11-17T02:00:00+08:00",
+                home: "Andorra",
+                away: "Azerbaijan",
+                homeFlag: "🇦🇩",
+                awayFlag: "🇦🇿",
+                competition: "International Friendly",
+                channel: "beIN Sports 9 Arabia",
+                channelDisplay: "beIN Sports Arabia 9 HD",
+                isMalaysia: false
+            },
+            {
+                id: 4,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "2:00 PM",
+                isoStart: "2026-11-17T14:00:00+08:00",
+                home: "Yemen",
+                away: "Malaysia",
+                homeFlag: "🇾🇪",
+                awayFlag: "🇲🇾",
+                competition: "International Friendly",
+                channel: "Sukan+",
+                channelDisplay: "Sukan+",
+                isMalaysia: true
+            },
+            {
+                id: 5,
+                dateLabel: "Wednesday, 18 November",
+                timeLabel: "12:00 AM",
+                isoStart: "2026-11-18T00:00:00+08:00",
+                home: "Jordan",
+                away: "Australia",
+                homeFlag: "🇯🇴",
+                awayFlag: "🇦🇺",
+                competition: "International Friendly",
+                channel: "Jordan TV Sport",
+                channelDisplay: "Jordan TV Sport",
+                isMalaysia: false
+            }
+        ];
+
+        let currentChannelKey = "Sukan+";
+        let currentFilter = "ALL";
+
+        // Initialize Video.js Player
         const player = videojs('main-player', {
             autoplay: true,
             controls: true,
             preload: 'auto',
+            fluid: false,
             html5: {
                 vhs: {
                     overrideNative: true
@@ -451,66 +472,205 @@
             }
         });
 
-        function changeStream(url, btnElement) {
+        // Switch Channel Stream & Update UI
+        function selectChannel(channelKey, scrollToPlayer = false) {
+            const channelObj = CHANNELS[channelKey];
+            if (!channelObj) return;
+
+            currentChannelKey = channelKey;
+
+            // Update Video.js source
             player.src({
-                src: url,
+                src: channelObj.url,
                 type: 'application/x-mpegURL'
             });
             player.load();
-            player.play().catch(function(error) {
-                console.log("Autoplay blocked by browser:", error);
+            player.play().catch(err => {
+                console.log("Autoplay waiting for user interaction:", err);
             });
-        }
 
-        // Tab Switching Logic
-        function switchTab(tabName) {
-            const liveTabContent = document.getElementById('tab-live-content');
-            const nomineesTabContent = document.getElementById('tab-nominees-content');
-            const liveBtn = document.getElementById('tab-live-btn');
-            const nomineesBtn = document.getElementById('tab-nominees-btn');
+            // Update "Now Playing" label
+            document.getElementById('now-playing-label').textContent = channelObj.name;
 
-            if (tabName === 'live') {
-                liveTabContent.classList.remove('hidden');
-                nomineesTabContent.classList.add('hidden');
-                liveBtn.className = "py-3 px-6 text-sm font-bold border-b-2 border-yellow-500 text-yellow-400 flex items-center gap-2 transition";
-                nomineesBtn.className = "py-3 px-6 text-sm font-bold border-b-2 border-transparent text-gray-400 hover:text-yellow-400 flex items-center gap-2 transition";
-            } else {
-                liveTabContent.classList.add('hidden');
-                nomineesTabContent.classList.remove('hidden');
-                nomineesBtn.className = "py-3 px-6 text-sm font-bold border-b-2 border-yellow-500 text-yellow-400 flex items-center gap-2 transition";
-                liveBtn.className = "py-3 px-6 text-sm font-bold border-b-2 border-transparent text-gray-400 hover:text-yellow-400 flex items-center gap-2 transition";
+            // Update Channel Button States
+            const buttons = document.querySelectorAll('.channel-btn');
+            buttons.forEach((btn, idx) => {
+                const btnChannel = btn.getAttribute('data-channel');
+                const iconBox = btn.querySelector('div > div:first-child');
+                const pill = btn.querySelector('.live-pill');
+
+                if (btnChannel === channelKey) {
+                    btn.className = "channel-btn active-channel bg-emerald-600/20 border-2 border-emerald-500 text-white p-3.5 rounded-xl flex items-center justify-between transition text-left shadow-lg";
+                    iconBox.className = "w-9 h-9 rounded-lg bg-emerald-500 text-gray-950 flex items-center justify-center font-black text-sm shrink-0";
+                    iconBox.innerHTML = '<i class="fas fa-play"></i>';
+                    pill.className = "live-pill bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2 animate-pulse";
+                    pill.textContent = "LIVE";
+                } else {
+                    btn.className = "channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left";
+                    iconBox.className = "w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0";
+                    iconBox.innerHTML = '<i class="fas fa-tv"></i>';
+                    pill.className = "live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2";
+                    pill.textContent = `CH ${idx + 1}`;
+                }
+            });
+
+            // Show subtle feedback toast
+            const toast = document.getElementById('player-toast');
+            const toastText = document.getElementById('player-toast-text');
+            toastText.innerHTML = `<i class="fas fa-satellite-dish mr-1.5"></i> Tuned in to <strong>${channelObj.name}</strong>`;
+            toast.classList.remove('hidden');
+
+            if (scrollToPlayer) {
+                document.getElementById('player-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
-        // Countdown Timer Logic
-        // Target: Tuesday, 27 October 2026 03:00 AM GMT+8 (ISO 8601 string)
-        const targetDate = new Date('2026-10-27T03:00:00+08:00').getTime();
+        function reloadCurrentStream() {
+            selectChannel(currentChannelKey, false);
+        }
 
-        function updateCountdown() {
+        // Filter Schedule by Channel
+        function filterSchedule(channelFilter, btnElement) {
+            currentFilter = channelFilter;
+
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.className = "filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition";
+            });
+            btnElement.className = "filter-tab bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition";
+
+            renderSchedule();
+        }
+
+        // Render Schedule Cards
+        function renderSchedule() {
+            const container = document.getElementById('schedule-list');
+            const filteredMatches = currentFilter === 'ALL'
+                ? MATCHES
+                : MATCHES.filter(m => m.channel === currentFilter);
+
+            if (filteredMatches.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-gray-400 text-xs">No matches scheduled for this channel.</div>`;
+                return;
+            }
+
             const now = new Date().getTime();
-            const difference = targetDate - now;
 
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            container.innerHTML = filteredMatches.map(match => {
+                const startMs = new Date(match.isoStart).getTime();
+                const endMs = startMs + (2 * 60 * 60 * 1000); // Assume ~2hr broadcast window
+                const isLiveNow = now >= startMs && now <= endMs;
+                const isFinished = now > endMs;
 
-                document.getElementById('days').innerText = String(days).padStart(2, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('countdown').innerHTML = `
-                    <div class="col-span-4 bg-yellow-500/20 border border-yellow-500 text-yellow-300 font-bold p-3 rounded-xl text-center">
-                        <i class="fas fa-broadcast-tower animate-pulse mr-2"></i> Ceremony is LIVE Now!
+                let statusTag = `<span class="text-[10px] font-bold bg-gray-800 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded">${match.timeLabel}</span>`;
+                if (isLiveNow) {
+                    statusTag = `<span class="text-[10px] font-extrabold bg-red-600 text-white px-2 py-0.5 rounded animate-pulse flex items-center gap-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> LIVE NOW</span>`;
+                } else if (isFinished) {
+                    statusTag = `<span class="text-[10px] font-semibold bg-gray-800 text-gray-500 px-2 py-0.5 rounded">FT • ${match.timeLabel}</span>`;
+                }
+
+                const malaysiaBadge = match.isMalaysia
+                    ? `<span class="text-[10px] font-extrabold bg-yellow-500/20 text-yellow-300 border border-yellow-500/40 px-2 py-0.5 rounded-full"><i class="fas fa-star text-[9px] mr-1"></i>HARIMAU MALAYA</span>`
+                    : `<span class="text-[10px] font-medium text-gray-400">${match.competition}</span>`;
+
+                const cardStyle = match.isMalaysia ? 'malaysia-highlight' : 'glass-card';
+                const btnStyle = match.isMalaysia
+                    ? 'bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-extrabold'
+                    : 'bg-emerald-600/25 hover:bg-emerald-500 text-emerald-300 hover:text-gray-950 border border-emerald-500/40 font-bold';
+
+                return `
+                    <div class="${cardStyle} rounded-xl p-3.5 relative">
+                        <div class="flex items-center justify-between gap-2 text-[11px] text-gray-400 mb-2">
+                            <span class="font-semibold text-gray-300"><i class="far fa-calendar mr-1 text-emerald-400"></i> ${match.dateLabel}</span>
+                            ${statusTag}
+                        </div>
+
+                        <div class="flex items-center justify-between gap-2 my-2.5">
+                            <div class="flex items-center gap-2 font-bold text-sm sm:text-base text-white">
+                                <span class="text-lg">${match.homeFlag}</span>
+                                <span>${match.home}</span>
+                            </div>
+                            <span class="text-xs font-black text-gray-500 bg-gray-900/90 px-2 py-0.5 rounded">VS</span>
+                            <div class="flex items-center gap-2 font-bold text-sm sm:text-base text-white text-right">
+                                <span>${match.away}</span>
+                                <span class="text-lg">${match.awayFlag}</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-2 pt-2.5 mt-2 border-t border-white/10">
+                            <div>${malaysiaBadge}</div>
+                            <button type="button"
+                                    onclick="selectChannel('${match.channel}', true)"
+                                    class="${btnStyle} text-[11px] px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Watch on ${match.channelDisplay}</span>
+                            </button>
+                        </div>
                     </div>
                 `;
+            }).join('');
+        }
+
+        // Dynamic Next / Live Match Banner & Countdown
+        function updateHeroMatchStatus() {
+            const now = new Date().getTime();
+            const badgeEl = document.getElementById('status-badge');
+            const channelEl = document.getElementById('status-channel');
+            const titleEl = document.getElementById('status-match-title');
+            const timeEl = document.getElementById('status-match-time');
+            const countdownEl = document.getElementById('status-countdown');
+
+            // Check if any match is currently LIVE (within 2 hours of kickoff)
+            const liveMatch = MATCHES.find(m => {
+                const start = new Date(m.isoStart).getTime();
+                return now >= start && now <= start + (2 * 60 * 60 * 1000);
+            });
+
+            if (liveMatch) {
+                badgeEl.innerHTML = `<span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span> LIVE ON AIR NOW`;
+                badgeEl.className = "text-red-400 flex items-center gap-1.5";
+                channelEl.textContent = liveMatch.channelDisplay;
+                titleEl.textContent = `${liveMatch.homeFlag} ${liveMatch.home} vs ${liveMatch.away} ${liveMatch.awayFlag}`;
+                timeEl.textContent = `${liveMatch.dateLabel} • ${liveMatch.timeLabel}`;
+                countdownEl.textContent = "IN PROGRESS";
+                countdownEl.className = "font-mono font-bold text-red-400 bg-red-500/15 px-2 py-0.5 rounded border border-red-500/30";
+                return;
+            }
+
+            // Otherwise find the next upcoming match
+            const nextMatch = MATCHES.find(m => new Date(m.isoStart).getTime() > now);
+
+            if (nextMatch) {
+                const diff = new Date(nextMatch.isoStart).getTime() - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const timeStr = days > 0
+                    ? `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m`
+                    : `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                badgeEl.innerHTML = `<i class="fas fa-bolt"></i> NEXT KICKOFF`;
+                badgeEl.className = "text-emerald-400 flex items-center gap-1.5";
+                channelEl.textContent = nextMatch.channelDisplay;
+                titleEl.textContent = `${nextMatch.homeFlag} ${nextMatch.home} vs ${nextMatch.away} ${nextMatch.awayFlag}`;
+                timeEl.textContent = `${nextMatch.dateLabel} • ${nextMatch.timeLabel}`;
+                countdownEl.textContent = `Starts in ${timeStr}`;
+                countdownEl.className = "font-mono font-bold text-yellow-400 bg-yellow-500/10 px-2 py-0.5 rounded border border-yellow-500/20";
+            } else {
+                badgeEl.innerHTML = `<i class="fas fa-check-circle"></i> WINDOW COMPLETED`;
+                channelEl.textContent = "Now Sports";
+                titleEl.textContent = "All Friendly Matches Concluded";
+                timeEl.textContent = "Stay tuned for upcoming fixtures";
+                countdownEl.textContent = "ENDED";
             }
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        // Initial Render & Timers
+        renderSchedule();
+        updateHeroMatchStatus();
+        setInterval(updateHeroMatchStatus, 1000);
+        setInterval(renderSchedule, 60000);
     </script>
 
 </body>
