@@ -141,10 +141,10 @@
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
                 <div>
                     <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold px-3 py-1 rounded-lg mb-3">
-                        <i class="fas fa-futbol"></i> FIFA INTERNATIONAL MATCH WINDOW
+                        <i class="fas fa-futbol"></i> FIFA INTERNATIONAL & CLUB FRIENDLIES
                     </div>
                     <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wide hero-gradient-text mb-2">
-                        International Football Friendlies 2026
+                        Football Friendlies 2026
                     </h1>
                     <p class="text-gray-300 text-xs sm:text-sm font-medium flex flex-wrap items-center gap-2">
                         <span><i class="fas fa-satellite-dish text-emerald-400 mr-1"></i> Live Broadcasts & Match Center</span>
@@ -206,7 +206,7 @@
                     </video>
                 </div>
 
-                <!-- Stream Notification Message Box (Replaces any alert) -->
+                <!-- Stream Notification Message Box -->
                 <div id="player-toast" class="hidden mb-4 bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs font-medium px-3.5 py-2.5 rounded-xl flex items-center justify-between">
                     <span id="player-toast-text"><i class="fas fa-circle-check mr-1.5"></i> Switched channel stream.</span>
                     <button onclick="document.getElementById('player-toast').classList.add('hidden')" class="text-emerald-400 hover:text-white">
@@ -217,90 +217,16 @@
                 <!-- Channel Switcher Header -->
                 <div class="flex items-center justify-between mb-2.5">
                     <span class="text-xs font-bold uppercase tracking-wider text-gray-400">
-                        <i class="fas fa-tv text-emerald-400 mr-1.5"></i> Select Broadcast Channel (4 Feeds)
+                        <i class="fas fa-tv text-emerald-400 mr-1.5"></i> Select Broadcast Channel (<span id="channel-count-label">13</span> Feeds)
                     </span>
                     <button onclick="reloadCurrentStream()" class="text-xs text-gray-400 hover:text-emerald-400 transition flex items-center gap-1">
                         <i class="fas fa-rotate-right"></i> Refresh Stream
                     </button>
                 </div>
 
-                <!-- 4 Interactive Channel Switcher Buttons -->
-                <div id="channel-buttons-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <!-- Channel 1: Sukan+ -->
-                    <button type="button"
-                            data-channel="Sukan+"
-                            onclick="selectChannel('Sukan+')"
-                            class="channel-btn active-channel bg-emerald-600/20 border-2 border-emerald-500 text-white p-3.5 rounded-xl flex items-center justify-between transition text-left shadow-lg">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-9 h-9 rounded-lg bg-emerald-500 text-gray-950 flex items-center justify-center font-black text-sm shrink-0">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <div class="truncate">
-                                <div class="font-bold text-sm text-white truncate">Sukan+</div>
-                                <div class="text-[11px] text-emerald-300 truncate">RTM Sports Malaysia</div>
-                            </div>
-                        </div>
-                        <span class="live-pill bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2 animate-pulse">
-                            LIVE
-                        </span>
-                    </button>
-
-                    <!-- Channel 2: True Premier Football HD 4 -->
-                    <button type="button"
-                            data-channel="True Premier Football HD 4"
-                            onclick="selectChannel('True Premier Football HD 4')"
-                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
-                                <i class="fas fa-tv"></i>
-                            </div>
-                            <div class="truncate">
-                                <div class="font-bold text-sm text-gray-100 truncate">True Premier Football HD 4</div>
-                                <div class="text-[11px] text-gray-400 truncate">TrueVisions Sports</div>
-                            </div>
-                        </div>
-                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
-                            CH 2
-                        </span>
-                    </button>
-
-                    <!-- Channel 3: Jordan TV Sport -->
-                    <button type="button"
-                            data-channel="Jordan TV Sport"
-                            onclick="selectChannel('Jordan TV Sport')"
-                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
-                                <i class="fas fa-tv"></i>
-                            </div>
-                            <div class="truncate">
-                                <div class="font-bold text-sm text-gray-100 truncate">Jordan TV Sport</div>
-                                <div class="text-[11px] text-gray-400 truncate">JRTV Sports HD</div>
-                            </div>
-                        </div>
-                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
-                            CH 3
-                        </span>
-                    </button>
-
-                    <!-- Channel 4: beIN Sports 9 Arabia -->
-                    <button type="button"
-                            data-channel="beIN Sports 9 Arabia"
-                            onclick="selectChannel('beIN Sports 9 Arabia')"
-                            class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0">
-                                <i class="fas fa-tv"></i>
-                            </div>
-                            <div class="truncate">
-                                <div class="font-bold text-sm text-gray-100 truncate">beIN Sports 9 Arabia</div>
-                                <div class="text-[11px] text-gray-400 truncate">beIN MENA HD</div>
-                            </div>
-                        </div>
-                        <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
-                            CH 4
-                        </span>
-                    </button>
+                <!-- Dynamic Channel Switcher Buttons Grid -->
+                <div id="channel-buttons-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[340px] overflow-y-auto pr-1 custom-scrollbar">
+                    <!-- Populated via JavaScript -->
                 </div>
             </section>
 
@@ -310,32 +236,18 @@
                     <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                         <i class="far fa-calendar-alt text-yellow-400"></i> TV & Match Schedule
                     </h2>
-                    <span class="text-[11px] font-semibold text-gray-400 bg-gray-900 px-2.5 py-1 rounded-full border border-gray-800">
-                        5 Friendlies
+                    <span id="match-count-badge" class="text-[11px] font-semibold text-gray-400 bg-gray-900 px-2.5 py-1 rounded-full border border-gray-800">
+                        13 Friendlies
                     </span>
                 </div>
 
                 <!-- Channel Filter Tabs -->
                 <div class="flex gap-1.5 overflow-x-auto pb-2.5 mb-3 custom-scrollbar" id="filter-tabs">
-                    <button onclick="filterSchedule('ALL', this)" class="filter-tab bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition">
-                        All Channels
-                    </button>
-                    <button onclick="filterSchedule('Sukan+', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
-                        Sukan+
-                    </button>
-                    <button onclick="filterSchedule('True Premier Football HD 4', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
-                        True Premier 4
-                    </button>
-                    <button onclick="filterSchedule('Jordan TV Sport', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
-                        Jordan TV Sport
-                    </button>
-                    <button onclick="filterSchedule('beIN Sports 9 Arabia', this)" class="filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition">
-                        beIN Sports 9
-                    </button>
+                    <!-- Populated via JavaScript -->
                 </div>
 
                 <!-- Match Cards List -->
-                <div id="schedule-list" class="space-y-3 max-h-[620px] overflow-y-auto pr-1 custom-scrollbar">
+                <div id="schedule-list" class="space-y-3 max-h-[760px] overflow-y-auto pr-1 custom-scrollbar">
                     <!-- Populated via JavaScript -->
                 </div>
             </section>
@@ -363,20 +275,65 @@
                 subtitle: "RTM Sports Malaysia",
                 url: "https://0pnspbp7iq.tenbytecdn.com/live/sukanrtm/playlist.m3u8?md5=d37IcGPjis7vNQ_rIuF7yA&expires=1791181673"
             },
-            "True Premier Football HD 4": {
-                name: "True Premier Football HD 4",
-                subtitle: "TrueVisions Sports",
-                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://103.253.74.210:7070/stream/92/index.m3u8"
+            "Match Premier": {
+                name: "Match! Premier SD",
+                subtitle: "Match TV Russia",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8"
+            },
+            "beIN Sports 9 Arabia": {
+                name: "beIN Sports 9 Arabia",
+                subtitle: "beIN MENA HD",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://yusftsoreforver.ddns.net/live/ar/qa/bein/bein_sport_9_hd/index.m3u8"
+            },
+            "KBS2 Korea": {
+                name: "KBS2 Korea",
+                subtitle: "Korean Broadcasting System",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://124.222.153.240/kakaotv/get_channel.php?channel=kbs2"
+            },
+            "CCTV-5 Sports": {
+                name: "CCTV 5 Sports",
+                subtitle: "China Central Television",
+                url: "https://iptv.yang-1989.xyz/cn/34pxfp.m3u8"
+            },
+            "KTV Sport": {
+                name: "KTV Sport",
+                subtitle: "Kuwait TV Sports",
+                url: "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8"
+            },
+            "Nippon TV": {
+                name: "Nippon TV",
+                subtitle: "NTV Japan",
+                url: "https://ntv5.mov3.co/hls/ntv.m3u8"
+            },
+            "Sharjah Sports": {
+                name: "Sharjah Sports",
+                subtitle: "SMC Sports UAE",
+                url: "https://svs.itworkscdn.net/smc4sportslive/smc4tv.smil/playlist.m3u8"
+            },
+            "Futbol TV": {
+                name: "Futbol TV",
+                subtitle: "Uzbekistan Football HD",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://stream3.cinerama.uz/1010/tracks-v1a1/mono.m3u8"
             },
             "Jordan TV Sport": {
                 name: "Jordan TV Sport",
                 subtitle: "JRTV Sports HD",
                 url: "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8"
             },
-            "beIN Sports 9 Arabia": {
-                name: "beIN Sports 9 Arabia",
-                subtitle: "beIN MENA HD",
-                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://yusftsoreforver.ddns.net/live/ar/qa/bein/bein_sport_9_hd/index.m3u8"
+            "Channel One Russia (Server 1)": {
+                name: "Channel One Russia HD (Server 1)",
+                subtitle: "Pervy Kanal Russia",
+                url: "https://allinonereborn2.online/livtest3/stream_proxy.php?url=http://31.148.5.241/kanal_1/index.m3u8"
+            },
+            "Channel One Russia (Server 2)": {
+                name: "Channel One Russia HD (Server 2)",
+                subtitle: "Pervy Kanal Backup",
+                url: "https://stream8.cinerama.uz/1214/index.m3u8"
+            },
+            "IRIB Varzesh": {
+                name: "IRIB Varzesh",
+                subtitle: "IRIB Sports Iran",
+                url: "https://cp11.adabmedia.com/hls2/varzeshtest.m3u8"
             }
         };
 
@@ -384,31 +341,31 @@
         const MATCHES = [
             {
                 id: 1,
-                dateLabel: "Saturday, 14 November",
-                timeLabel: "4:00 PM",
-                isoStart: "2026-11-14T16:00:00+08:00",
-                home: "Thailand U23",
-                away: "Singapore U23",
-                homeFlag: "🇹🇭",
-                awayFlag: "🇸🇬",
-                competition: "International Friendly",
-                channel: "True Premier Football HD 4",
-                channelDisplay: "True Premier Football HD 4",
+                dateLabel: "Sunday, 15 November",
+                timeLabel: "10:00 PM",
+                isoStart: "2026-11-15T22:00:00+08:00",
+                home: "Zenit",
+                away: "Trabzonspor",
+                homeFlag: "🇷🇺",
+                awayFlag: "🇹🇷",
+                competition: "Club Friendly",
+                channel: "Match Premier",
+                channelDisplay: "Match! Premier SD",
                 isMalaysia: false
             },
             {
                 id: 2,
-                dateLabel: "Saturday, 14 November",
-                timeLabel: "8:00 PM",
-                isoStart: "2026-11-14T20:00:00+08:00",
-                home: "China",
-                away: "Malaysia",
-                homeFlag: "🇨🇳",
-                awayFlag: "🇲🇾",
+                dateLabel: "Monday, 16 November",
+                timeLabel: "9:00 PM",
+                isoStart: "2026-11-16T21:00:00+08:00",
+                home: "Russia U21",
+                away: "Kyrgyz Republic U23",
+                homeFlag: "🇷🇺",
+                awayFlag: "🇰🇬",
                 competition: "International Friendly",
-                channel: "Sukan+",
-                channelDisplay: "Sukan+",
-                isMalaysia: true
+                channel: "Match Premier",
+                channelDisplay: "Match! Premier SD",
+                isMalaysia: false
             },
             {
                 id: 3,
@@ -421,7 +378,7 @@
                 awayFlag: "🇦🇿",
                 competition: "International Friendly",
                 channel: "beIN Sports 9 Arabia",
-                channelDisplay: "beIN Sports Arabia 9 HD",
+                channelDisplay: "beIN Sports Arabia 9",
                 isMalaysia: false
             },
             {
@@ -440,6 +397,90 @@
             },
             {
                 id: 5,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "8:00 PM",
+                isoStart: "2026-11-17T20:00:00+08:00",
+                home: "Qatar",
+                away: "Korea Republic",
+                homeFlag: "🇶🇦",
+                awayFlag: "🇰🇷",
+                competition: "International Friendly",
+                channel: "KBS2 Korea",
+                channelDisplay: "KBS2 Korea",
+                isMalaysia: false
+            },
+            {
+                id: 6,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "8:00 PM",
+                isoStart: "2026-11-17T20:00:00+08:00",
+                home: "China",
+                away: "Bahrain",
+                homeFlag: "🇨🇳",
+                awayFlag: "🇧🇭",
+                competition: "International Friendly",
+                channel: "CCTV-5 Sports",
+                channelDisplay: "CCTV-5 Sports",
+                isMalaysia: false
+            },
+            {
+                id: 7,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "9:00 PM",
+                isoStart: "2026-11-17T21:00:00+08:00",
+                home: "Kuwait",
+                away: "Honduras",
+                homeFlag: "🇰🇼",
+                awayFlag: "🇭🇳",
+                competition: "International Friendly",
+                channel: "KTV Sport",
+                channelDisplay: "KTV Sport",
+                isMalaysia: false
+            },
+            {
+                id: 8,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "9:10 PM",
+                isoStart: "2026-11-17T21:10:00+08:00",
+                home: "Japan",
+                away: "Paraguay",
+                homeFlag: "🇯🇵",
+                awayFlag: "🇵🇾",
+                competition: "International Friendly",
+                channel: "Nippon TV",
+                channelDisplay: "Nippon TV",
+                isMalaysia: false
+            },
+            {
+                id: 9,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "10:10 PM",
+                isoStart: "2026-11-17T22:10:00+08:00",
+                home: "United Arab Emirates",
+                away: "Syria",
+                homeFlag: "🇦🇪",
+                awayFlag: "🇸🇾",
+                competition: "International Friendly",
+                channel: "Sharjah Sports",
+                channelDisplay: "Sharjah Sports",
+                isMalaysia: false
+            },
+            {
+                id: 10,
+                dateLabel: "Tuesday, 17 November",
+                timeLabel: "11:30 PM",
+                isoStart: "2026-11-17T23:30:00+08:00",
+                home: "Saudi Arabia",
+                away: "Uzbekistan",
+                homeFlag: "🇸🇦",
+                awayFlag: "🇺🇿",
+                competition: "International Friendly",
+                channel: "Futbol TV",
+                channelDisplay: "Futbol TV",
+                isMalaysia: false
+            },
+            {
+                id: 11,
                 dateLabel: "Wednesday, 18 November",
                 timeLabel: "12:00 AM",
                 isoStart: "2026-11-18T00:00:00+08:00",
@@ -450,6 +491,34 @@
                 competition: "International Friendly",
                 channel: "Jordan TV Sport",
                 channelDisplay: "Jordan TV Sport",
+                isMalaysia: false
+            },
+            {
+                id: 12,
+                dateLabel: "Wednesday, 18 November",
+                timeLabel: "12:00 AM",
+                isoStart: "2026-11-18T00:00:00+08:00",
+                home: "Russia",
+                away: "Venezuela",
+                homeFlag: "🇷🇺",
+                awayFlag: "🇻🇪",
+                competition: "International Friendly",
+                channel: "Channel One Russia (Server 1)",
+                channelDisplay: "Channel One Russia",
+                isMalaysia: false
+            },
+            {
+                id: 13,
+                dateLabel: "Wednesday, 18 November",
+                timeLabel: "7:00 AM",
+                isoStart: "2026-11-18T07:00:00+08:00",
+                home: "Argentina",
+                away: "Costa Rica",
+                homeFlag: "🇦🇷",
+                awayFlag: "🇨🇷",
+                competition: "International Friendly",
+                channel: "IRIB Varzesh",
+                channelDisplay: "IRIB Varzesh",
                 isMalaysia: false
             }
         ];
@@ -472,6 +541,90 @@
             }
         });
 
+        // Render Channel Switcher Buttons Dynamically
+        function renderChannelButtons() {
+            const grid = document.getElementById('channel-buttons-grid');
+            const keys = Object.keys(CHANNELS);
+            document.getElementById('channel-count-label').textContent = keys.length;
+
+            grid.innerHTML = keys.map((key, idx) => {
+                const ch = CHANNELS[key];
+                const isActive = key === currentChannelKey;
+
+                if (isActive) {
+                    return `
+                        <button type="button"
+                                data-channel="${key}"
+                                onclick="selectChannel('${key}')"
+                                class="channel-btn active-channel bg-emerald-600/20 border-2 border-emerald-500 text-white p-3 rounded-xl flex items-center justify-between transition text-left shadow-lg">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500 text-gray-950 flex items-center justify-center font-black text-xs shrink-0">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="truncate">
+                                    <div class="font-bold text-xs sm:text-sm text-white truncate">${ch.name}</div>
+                                    <div class="text-[11px] text-emerald-300 truncate">${ch.subtitle}</div>
+                                </div>
+                            </div>
+                            <span class="live-pill bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2 animate-pulse">
+                                LIVE
+                            </span>
+                        </button>
+                    `;
+                } else {
+                    return `
+                        <button type="button"
+                                data-channel="${key}"
+                                onclick="selectChannel('${key}')"
+                                class="channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3 rounded-xl flex items-center justify-between transition text-left">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-8 h-8 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                    <i class="fas fa-tv"></i>
+                                </div>
+                                <div class="truncate">
+                                    <div class="font-bold text-xs sm:text-sm text-gray-100 truncate">${ch.name}</div>
+                                    <div class="text-[11px] text-gray-400 truncate">${ch.subtitle}</div>
+                                </div>
+                            </div>
+                            <span class="live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2">
+                                CH ${idx + 1}
+                            </span>
+                        </button>
+                    `;
+                }
+            }).join('');
+        }
+
+        // Render Filter Tabs Dynamically
+        function renderFilterTabs() {
+            const tabContainer = document.getElementById('filter-tabs');
+            const filterOptions = [
+                { id: 'ALL', label: 'All Matches' },
+                { id: 'MALAYSIA', label: '🇲🇾 Malaysia' },
+                { id: 'CLUB', label: 'Club Friendly' },
+                { id: 'Match Premier', label: 'Match! Premier' },
+                { id: 'Sukan+', label: 'Sukan+' },
+                { id: 'beIN Sports 9 Arabia', label: 'beIN Sports 9' },
+                { id: 'KBS2 Korea', label: 'KBS2 Korea' },
+                { id: 'CCTV-5 Sports', label: 'CCTV-5' },
+                { id: 'KTV Sport', label: 'KTV Sport' },
+                { id: 'Nippon TV', label: 'Nippon TV' },
+                { id: 'Sharjah Sports', label: 'Sharjah Sports' },
+                { id: 'Futbol TV', label: 'Futbol TV' },
+                { id: 'Jordan TV Sport', label: 'Jordan TV' },
+                { id: 'Channel One Russia (Server 1)', label: 'Channel One' },
+                { id: 'IRIB Varzesh', label: 'IRIB Varzesh' }
+            ];
+
+            tabContainer.innerHTML = filterOptions.map(opt => {
+                const isSelected = currentFilter === opt.id;
+                const cls = isSelected
+                    ? "filter-tab bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition"
+                    : "filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition";
+                return `<button onclick="filterSchedule('${opt.id}')" class="${cls}">${opt.label}</button>`;
+            }).join('');
+        }
+
         // Switch Channel Stream & Update UI
         function selectChannel(channelKey, scrollToPlayer = false) {
             const channelObj = CHANNELS[channelKey];
@@ -492,27 +645,8 @@
             // Update "Now Playing" label
             document.getElementById('now-playing-label').textContent = channelObj.name;
 
-            // Update Channel Button States
-            const buttons = document.querySelectorAll('.channel-btn');
-            buttons.forEach((btn, idx) => {
-                const btnChannel = btn.getAttribute('data-channel');
-                const iconBox = btn.querySelector('div > div:first-child');
-                const pill = btn.querySelector('.live-pill');
-
-                if (btnChannel === channelKey) {
-                    btn.className = "channel-btn active-channel bg-emerald-600/20 border-2 border-emerald-500 text-white p-3.5 rounded-xl flex items-center justify-between transition text-left shadow-lg";
-                    iconBox.className = "w-9 h-9 rounded-lg bg-emerald-500 text-gray-950 flex items-center justify-center font-black text-sm shrink-0";
-                    iconBox.innerHTML = '<i class="fas fa-play"></i>';
-                    pill.className = "live-pill bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2 animate-pulse";
-                    pill.textContent = "LIVE";
-                } else {
-                    btn.className = "channel-btn bg-gray-900/80 hover:bg-gray-800/90 border border-gray-800 text-gray-300 p-3.5 rounded-xl flex items-center justify-between transition text-left";
-                    iconBox.className = "w-9 h-9 rounded-lg bg-gray-800 text-gray-400 flex items-center justify-center font-bold text-sm shrink-0";
-                    iconBox.innerHTML = '<i class="fas fa-tv"></i>';
-                    pill.className = "live-pill bg-gray-800 text-gray-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shrink-0 ml-2";
-                    pill.textContent = `CH ${idx + 1}`;
-                }
-            });
+            // Re-render Channel Buttons to reflect active state
+            renderChannelButtons();
 
             // Show subtle feedback toast
             const toast = document.getElementById('player-toast');
@@ -529,27 +663,30 @@
             selectChannel(currentChannelKey, false);
         }
 
-        // Filter Schedule by Channel
-        function filterSchedule(channelFilter, btnElement) {
-            currentFilter = channelFilter;
-
-            document.querySelectorAll('.filter-tab').forEach(tab => {
-                tab.className = "filter-tab bg-gray-900 text-gray-300 hover:bg-gray-800 font-semibold text-xs px-3 py-1.5 rounded-lg border border-gray-800 whitespace-nowrap transition";
-            });
-            btnElement.className = "filter-tab bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition";
-
+        // Filter Schedule
+        function filterSchedule(filterValue) {
+            currentFilter = filterValue;
+            renderFilterTabs();
             renderSchedule();
         }
 
         // Render Schedule Cards
         function renderSchedule() {
             const container = document.getElementById('schedule-list');
-            const filteredMatches = currentFilter === 'ALL'
-                ? MATCHES
-                : MATCHES.filter(m => m.channel === currentFilter);
+            let filteredMatches = MATCHES;
+
+            if (currentFilter === 'MALAYSIA') {
+                filteredMatches = MATCHES.filter(m => m.isMalaysia);
+            } else if (currentFilter === 'CLUB') {
+                filteredMatches = MATCHES.filter(m => m.competition === 'Club Friendly');
+            } else if (currentFilter !== 'ALL') {
+                filteredMatches = MATCHES.filter(m => m.channel === currentFilter);
+            }
+
+            document.getElementById('match-count-badge').textContent = `${filteredMatches.length} ${filteredMatches.length === 1 ? 'Match' : 'Friendlies'}`;
 
             if (filteredMatches.length === 0) {
-                container.innerHTML = `<div class="text-center py-8 text-gray-400 text-xs">No matches scheduled for this channel.</div>`;
+                container.innerHTML = `<div class="text-center py-8 text-gray-400 text-xs">No matches scheduled for this filter.</div>`;
                 return;
             }
 
@@ -557,7 +694,7 @@
 
             container.innerHTML = filteredMatches.map(match => {
                 const startMs = new Date(match.isoStart).getTime();
-                const endMs = startMs + (2 * 60 * 60 * 1000); // Assume ~2hr broadcast window
+                const endMs = startMs + (2 * 60 * 60 * 1000); // ~2hr broadcast window
                 const isLiveNow = now >= startMs && now <= endMs;
                 const isFinished = now > endMs;
 
@@ -568,14 +705,26 @@
                     statusTag = `<span class="text-[10px] font-semibold bg-gray-800 text-gray-500 px-2 py-0.5 rounded">FT • ${match.timeLabel}</span>`;
                 }
 
-                const malaysiaBadge = match.isMalaysia
-                    ? `<span class="text-[10px] font-extrabold bg-yellow-500/20 text-yellow-300 border border-yellow-500/40 px-2 py-0.5 rounded-full"><i class="fas fa-star text-[9px] mr-1"></i>HARIMAU MALAYA</span>`
-                    : `<span class="text-[10px] font-medium text-gray-400">${match.competition}</span>`;
+                let compBadge = `<span class="text-[10px] font-medium text-gray-400">${match.competition}</span>`;
+                if (match.isMalaysia) {
+                    compBadge = `<span class="text-[10px] font-extrabold bg-yellow-500/20 text-yellow-300 border border-yellow-500/40 px-2 py-0.5 rounded-full"><i class="fas fa-star text-[9px] mr-1"></i>HARIMAU MALAYA</span>`;
+                } else if (match.competition === 'Club Friendly') {
+                    compBadge = `<span class="text-[10px] font-bold bg-sky-500/15 text-sky-300 border border-sky-500/30 px-2 py-0.5 rounded-full">CLUB FRIENDLY</span>`;
+                }
 
                 const cardStyle = match.isMalaysia ? 'malaysia-highlight' : 'glass-card';
                 const btnStyle = match.isMalaysia
                     ? 'bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-extrabold'
                     : 'bg-emerald-600/25 hover:bg-emerald-500 text-emerald-300 hover:text-gray-950 border border-emerald-500/40 font-bold';
+
+                const backupChannelBtn = match.channel === "Channel One Russia (Server 1)"
+                    ? `<button type="button"
+                               onclick="selectChannel('Channel One Russia (Server 2)', true)"
+                               class="bg-gray-800 hover:bg-gray-700 text-gray-300 border border-gray-700 text-[10px] font-semibold px-2 py-1.5 rounded-lg transition cursor-pointer"
+                               title="Switch to Server 2">
+                           S2
+                       </button>`
+                    : '';
 
                 return `
                     <div class="${cardStyle} rounded-xl p-3.5 relative">
@@ -597,13 +746,16 @@
                         </div>
 
                         <div class="flex items-center justify-between gap-2 pt-2.5 mt-2 border-t border-white/10">
-                            <div>${malaysiaBadge}</div>
-                            <button type="button"
-                                    onclick="selectChannel('${match.channel}', true)"
-                                    class="${btnStyle} text-[11px] px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
-                                <i class="fas fa-play-circle"></i>
-                                <span>Watch on ${match.channelDisplay}</span>
-                            </button>
+                            <div>${compBadge}</div>
+                            <div class="flex items-center gap-1.5">
+                                <button type="button"
+                                        onclick="selectChannel('${match.channel}', true)"
+                                        class="${btnStyle} text-[11px] px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span>Watch on ${match.channelDisplay}</span>
+                                </button>
+                                ${backupChannelBtn}
+                            </div>
                         </div>
                     </div>
                 `;
@@ -667,6 +819,8 @@
         }
 
         // Initial Render & Timers
+        renderChannelButtons();
+        renderFilterTabs();
         renderSchedule();
         updateHeroMatchStatus();
         setInterval(updateHeroMatchStatus, 1000);
